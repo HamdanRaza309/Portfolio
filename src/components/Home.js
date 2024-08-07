@@ -43,8 +43,8 @@ const Home = () => {
                         <h2 className="text-4xl md:text-4xl">{displayedText}</h2>
                     </div>
                     <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-6">
-                        <button className="bg-white text-red-500 py-2 px-6 font-bold hover:bg-red-500 hover:text-white hover:border hover:border-black hover:animate-slide-in transition duration-300">Hire Me</button>
-                        <button className="bg-white text-red-500 py-2 px-6 font-bold hover:bg-red-500 hover:text-white hover:border hover:border-black hover:animate-slide-in transition duration-300">Contact Me</button>
+                        <button className="btnForRedBg">Hire Me</button>
+                        <button className="btnForRedBg">Contact Me</button>
                     </div>
                 </div>
                 <div className="md:w-1/2 flex justify-center md:justify-end relative animate-zoom-in">

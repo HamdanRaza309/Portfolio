@@ -116,7 +116,7 @@ const About = () => {
                     </div>
                     <div className="mb-6 flex items-center lg:items-start">
                         <Link
-                            className="bg-red-500 text-white px-5 py-3 font-bold text-center lg:text-left hover:bg-transparent hover:text-red-500 hover:border hover:border-black hover:animate-slide-in transition duration-300"
+                            className="btnForWhiteBg"
                         >
                             Learn More
                         </Link>

@@ -49,7 +49,10 @@ const Services = () => {
                     <div
                         key={index}
                         className='h-52 m-2 p-6 flex items-center'
-                        style={{ width: "45%" }}>
+                        style={{ width: "45%" }}
+                        onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                    >
                         <div
                             className=" bg-transparent"
                             style={{ border: '1px solid red' }}
@@ -59,8 +62,6 @@ const Services = () => {
 
                         <div className={`flex flex-col flex-1 h-auto py-5 px-3
                         ${hoveredIndex === index ? ' text-white animate-bg-change border-t border-r border-b border-red-600' : 'bg-transparent'}`}
-                            onMouseEnter={() => setHoveredIndex(index)}
-                            onMouseLeave={() => setHoveredIndex(null)}
                         >
                             <h3 className='text-2xl font-bold mb-2'>{service.name}</h3>
                             <p className='font-xl'>{service.description}</p>
