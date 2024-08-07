@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
 }
+
 @keyframes shake-in {
   0% {
     opacity: 0;
@@ -28,7 +29,7 @@ body{
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateY(60px);
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;
@@ -37,8 +38,24 @@ body{
 }
 
 .animate-fade-in {
-  animation: fade-in 2s ease-out;
+  animation: fade-in 1s ease-out;
 }
+
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-zoom-in {
+  animation: zoom-in 1.5s ease-out;
+}
+
 
 @keyframes slide-in {
   0% {
@@ -57,52 +74,40 @@ body{
 
 @keyframes progressBarFill95 {
   from {
-      width: 0%;
+    width: 0%;
   }
   to {
-      width: 95%;
+    width: 95%;
   }
 }
-.animate-slide-in {
-  animation: slide-in 1s ease-out;
-}
+
 @keyframes progressBarFill85 {
   from {
-      width: 0%;
+    width: 0%;
   }
   to {
-      width: 85%;
-  }
-}
-.animate-slide-in {
-  animation: slide-in 1s ease-out;
-}
-@keyframes progressBarFill85 {
-  from {
-      width: 0%;
-  }
-  to {
-      width: 85%;
+    width: 85%;
   }
 }
 
 @keyframes progressBarFill80 {
   from {
-      width: 0%;
+    width: 0%;
   }
   to {
-      width: 80%;
+    width: 80%;
   }
 }
 
 @keyframes progressBarFill75 {
   from {
-      width: 0%;
+    width: 0%;
   }
   to {
-      width: 75%;
+    width: 75%;
   }
 }
+
 .animate-progress-95 {
   animation: progressBarFill95 2s forwards;
 }
@@ -111,10 +116,10 @@ body{
   animation: progressBarFill85 2s forwards;
 }
 
-
 .animate-progress-80 {
   animation: progressBarFill80 2s forwards;
 }
+
 .animate-progress-75 {
   animation: progressBarFill75 2s forwards;
 }
@@ -147,4 +152,17 @@ body{
   100% {
     transform: scale(20) translate3D(100vw, -100vh, 0) rotate(0deg);
   }
+}
+
+@keyframes bgChange {
+  from {
+    background-color: transparent; 
+  }
+  to {
+    background-color: #dc2626; 
+  }
+}
+
+.animate-bg-change {
+  animation: bgChange 2s forwards;
 }

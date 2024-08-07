@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Hamdan from '../assets/images/Hamdan.jpg'
+import Hamdan from '../assets/images/Hamdan.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket } from '@fortawesome/free-solid-svg-icons';
 import { useInView } from "react-intersection-observer";
@@ -10,17 +10,31 @@ const About = () => {
     const { ref: progressRef, inView: progressVisible } = useInView();
     const { ref: rocketRef, inView: rocketVisible } = useInView();
     const [rocketAnimated, setRocketAnimated] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
+    const [aboutAnimationRun, setAboutAnimationRun] = useState(false);
+    const [progressAnimationRun, setProgressAnimationRun] = useState(false);
 
     useEffect(() => {
         if (rocketVisible && !rocketAnimated) {
-            setRocketAnimated(true)
+            setRocketAnimated(true);
         }
-    }, [rocketVisible, rocketAnimated])
+    }, [rocketVisible, rocketAnimated]);
 
+    useEffect(() => {
+        if (aboutVisible && !aboutAnimationRun) {
+            console.log(aboutVisible);
+
+            setAboutAnimationRun(true);
+        }
+    }, [aboutVisible, aboutAnimationRun]);
+
+    useEffect(() => {
+        if (progressVisible && !progressAnimationRun) {
+            setProgressAnimationRun(true);
+        }
+    }, [progressVisible, progressAnimationRun]);
 
     return (
-        <div ref={aboutRef} className={`${aboutVisible ? 'animate-fade-in' : ''} bg-white text-gray-800 min-h-screen flex flex-col lg:flex-row items-center`}>
+        <div ref={aboutRef} className={`${aboutAnimationRun ? 'animate-fade-in' : ''} bg-white text-gray-800 min-h-screen flex flex-col lg:flex-row items-center`}>
             <img className='flex-1 object-cover m-0 w-96 h-auto transform scale-x-[-1]' src={Hamdan} alt="About Me" />
             <div className='flex-1 flex flex-col py-3 px-10'>
                 <div className='flex items-center mb-8 '>
@@ -43,12 +57,12 @@ const About = () => {
                         </div>
                         <div className="h-3 bg-gray-300 rounded-full">
                             <div
-                                className={`progress-bar h-full rounded-full bg-red-500 ${progressVisible ? 'animate-progress-95' : ''}`}
+                                className={`progress-bar h-full rounded-full bg-red-500 ${progressAnimationRun ? 'animate-progress-95' : ''}`}
                                 role="progressbar"
                                 aria-valuenow="95"
                                 aria-valuemin="0"
                                 aria-valuemax="100"
-                                style={{ width: progressVisible ? '95%' : '0%' }}
+                                style={{ width: progressAnimationRun ? '95%' : '0%' }}
                             ></div>
                         </div>
                     </div>
@@ -59,12 +73,12 @@ const About = () => {
                         </div>
                         <div className="h-3 bg-gray-300 rounded-full">
                             <div
-                                className={`progress-bar h-full rounded-full bg-red-500 ${progressVisible ? 'animate-progress-85' : ''}`}
+                                className={`progress-bar h-full rounded-full bg-red-500 ${progressAnimationRun ? 'animate-progress-85' : ''}`}
                                 role="progressbar"
                                 aria-valuenow="85"
                                 aria-valuemin="0"
                                 aria-valuemax="100"
-                                style={{ width: progressVisible ? '85%' : '0%' }}
+                                style={{ width: progressAnimationRun ? '85%' : '0%' }}
                             ></div>
                         </div>
                     </div>
@@ -75,12 +89,12 @@ const About = () => {
                         </div>
                         <div className="h-3 bg-gray-300 rounded-full">
                             <div
-                                className={`progress-bar h-full rounded-full bg-red-500 ${progressVisible ? 'animate-progress-75' : ''}`}
+                                className={`progress-bar h-full rounded-full bg-red-500 ${progressAnimationRun ? 'animate-progress-75' : ''}`}
                                 role="progressbar"
                                 aria-valuenow="75"
                                 aria-valuemin="0"
                                 aria-valuemax="100"
-                                style={{ width: progressVisible ? '75%' : '0%' }}
+                                style={{ width: progressAnimationRun ? '75%' : '0%' }}
                             ></div>
                         </div>
                     </div>
@@ -91,12 +105,12 @@ const About = () => {
                         </div>
                         <div className="h-3 bg-gray-300 rounded-full">
                             <div
-                                className={`progress-bar h-full rounded-full bg-red-500 ${progressVisible ? 'animate-progress-80' : ''}`}
+                                className={`progress-bar h-full rounded-full bg-red-500 ${progressAnimationRun ? 'animate-progress-80' : ''}`}
                                 role="progressbar"
                                 aria-valuenow="80"
                                 aria-valuemin="0"
                                 aria-valuemax="100"
-                                style={{ width: progressVisible ? '80%' : '0%' }}
+                                style={{ width: progressAnimationRun ? '80%' : '0%' }}
                             ></div>
                         </div>
                     </div>

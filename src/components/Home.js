@@ -30,24 +30,24 @@ const Home = () => {
     }, [displayedText, isDeleting, currentRole]);
 
     return (
-        <div style={{ backgroundImage: `url(${bgImage})` }} className="z-10 h-screen flex items-center justify-center text-white overflow-hidden">
+        <div style={{ backgroundImage: `url(${bgImage})`, height: '110vh' }} className="z-10 p-24 flex items-center justify-center text-white overflow-hidden">
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8 relative">
                 <div className="flex flex-col md:w-1/2 space-y-4 text-center md:text-left">
-                    <div className="inline-flex items-center animate-fade-in">
+                    <div className="inline-flex items-center animate-zoom-in">
                         <img src={profile} alt="Profile" className="w-16 h-16 mr-1 rounded-full" />
                         <span className="ml-4 text-xl bg-white text-black p-4 rounded-full mx-auto md:mx-0">Hello friend!</span>
                     </div>
-                    <h3 className="text-3xl md:text-3xl">I'm </h3>
-                    <h1 className="animate-slide-in text-5xl md:text-5xl font-extrabold">Hamdan Raza</h1>
-                    <div className="h-20 animate-slide-in">
+                    <h3 className="text-3xl md:text-3xl animate-zoom-in">I'm </h3>
+                    <h1 className="animate-zoom-in text-5xl md:text-5xl font-extrabold">Hamdan Raza</h1>
+                    <div className="h-20 animate-zoom-in">
                         <h2 className="text-4xl md:text-4xl">{displayedText}</h2>
                     </div>
-                    <div className="animate-fade-in flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-6">
+                    <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-6">
                         <button className="bg-white text-red-500 py-2 px-6 font-bold hover:bg-red-500 hover:text-white hover:border hover:border-black hover:animate-slide-in transition duration-300">Hire Me</button>
                         <button className="bg-white text-red-500 py-2 px-6 font-bold hover:bg-red-500 hover:text-white hover:border hover:border-black hover:animate-slide-in transition duration-300">Contact Me</button>
                     </div>
                 </div>
-                <div className="md:w-1/2 flex justify-center md:justify-end relative animate-fade-in">
+                <div className="md:w-1/2 flex justify-center md:justify-end relative animate-zoom-in">
                     <img src={profile} alt="DP" className="h-96 md:w-full relative " />
                 </div>
             </div>
