@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Services from './components/Services';
+import Experience from './components/Experience';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         </div>
         <About />
         <Services />
+        <Experience />
         <Footer />
       </div>
     </Router>

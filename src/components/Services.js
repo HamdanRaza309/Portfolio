@@ -13,9 +13,7 @@ const Services = () => {
 
 
     const [hoveredIndex, setHoveredIndex] = useState(null);
-    const [animatedIndex, setAnimatedIndex] = useState(null);
     const { ref: serviceRef, inView: serviceVisible } = useInView({ threshold: 0.1 });
-    const { ref: serviceCardRef, inView: serviceCardVisible } = useInView({ threshold: 0.1 });
     const [serviceAnimationRun, setServiceAnimationRun] = useState(false)
 
 
@@ -24,14 +22,6 @@ const Services = () => {
             setServiceAnimationRun(true)
         }
     }, [serviceVisible, serviceAnimationRun])
-
-
-
-    useEffect(() => {
-        if (serviceCardVisible && animatedIndex === null) {
-            setAnimatedIndex(services.length);
-        }
-    }, [serviceCardVisible, animatedIndex]);
 
 
     return (
@@ -44,7 +34,7 @@ const Services = () => {
                 </div>
                 <h1 className='text-5xl font-bold text-center'>Awesome Quality Services</h1>
             </div>
-            <div ref={serviceCardRef} className='flex flex-wrap justify-around'>
+            <div className='flex flex-wrap justify-around'>
                 {services.map((service, index) => (
                     <div
                         key={index}
