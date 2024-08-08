@@ -21,8 +21,6 @@ const About = () => {
 
     useEffect(() => {
         if (aboutVisible && !aboutAnimationRun) {
-            console.log(aboutVisible);
-
             setAboutAnimationRun(true);
         }
     }, [aboutVisible, aboutAnimationRun]);
