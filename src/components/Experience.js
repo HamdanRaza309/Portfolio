@@ -42,6 +42,12 @@ export default function Experience() {
 
     return (
         <>
+            <Banner
+                sideHeading={'Welcome to My Creative Space'}
+                heading={<span>Turning <span className="text-black">Ideas</span><span> into Digital Art.</span></span>}
+                desc={`Welcome to my digital playground, where creativity meets technology. I'm Hamdan Raza, a developer dedicated to weaving together design and code to craft unforgettable digital experiences. My mission is to transform innovative concepts into stunning, functional solutions that captivate and engage. From designing sleek interfaces to building robust applications, I’m here to make your vision a reality. Ready to embark on a journey of creativity and tech? Let’s create something remarkable together!`}
+                buttonText={'Discover More'}
+            />
             <div ref={experienceRef} className={`flex flex-col px-10 py-5 ${experienceAnimationRun ? 'animate-fade-in' : ''}`}>
                 <div className={`flex flex-col items-center mb-16 ${resumeAnimationRun ? 'animate-zoom-in' : ''}`}>
                     <div className='flex items-center mb-4'>
@@ -108,12 +114,6 @@ export default function Experience() {
                 </div>
 
             </div>
-            <Banner
-                sideHeading={'REASONABLE PRICE'}
-                heading={<span>Get A <span className="text-black">Special</span> Price</span>}
-                desc={'Web Developer 09/02/2023 Soft Agency, San Francisco, CA Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus.'}
-                buttonText={'Pricing Plan'}
-            />
         </>
     )
 }

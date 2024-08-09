@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
+import Banner from "./Banner"
+
 
 export default function PricePlan() {
     const { ref: pricePlanRef, inView: pricePlanVisible } = useInView();
@@ -92,6 +94,12 @@ export default function PricePlan() {
                     </div>
                 ))}
             </div>
+            <Banner
+                sideHeading={'Transforming Ideas into Reality'}
+                heading={<span>Crafting<span className="text-black"> Code </span>with Creativity</span>}
+                desc={'Passionate about developing immersive and engaging experiences, I seamlessly blend design with functionality to create impactful digital solutions. With a keen eye for detail and a love for innovation, I strive to push the boundaries of what’s possible and bring unique visions to life. Whether it’s building dynamic web applications or crafting intuitive user interfaces, my goal is to deliver exceptional results that make a difference. Let’s collaborate and build something extraordinary together!'}
+                buttonText={'Explore My Work'}
+            />
         </div>
     );
 }
