@@ -25,7 +25,7 @@ const Services = () => {
 
 
     return (
-        <div ref={serviceRef} className={`bg-gray-100 py-16 px-20 ${serviceAnimationRun ? 'animate-fade-in' : ''} `}>
+        <div ref={serviceRef} className={`py-16 px-20 ${serviceAnimationRun ? 'animate-fade-in' : ''} `}>
             <div className={`flex flex-col items-center mb-12 ${serviceAnimationRun ? 'animate-zoom-in' : ''} `}>
                 <div className='flex items-center mb-4'>
                     <div className='bg-red-600 h-1 w-12 mx-1'></div>
