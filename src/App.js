@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Services from './components/Services';
 import Experience from './components/Experience';
 import PricePlan from './components/PricePlan';
+import Customers from './components/Customers';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Experience />
         <Projects />
         <PricePlan />
+        <Customers />
         <Footer />
       </div>
     </Router>
