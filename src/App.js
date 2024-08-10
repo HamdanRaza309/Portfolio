@@ -10,6 +10,7 @@ import Services from './components/Services';
 import Experience from './components/Experience';
 import PricePlan from './components/PricePlan';
 import Customers from './components/Customers';
+import Team from './components/Team';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Experience />
         <Projects />
         <PricePlan />
+        <Team />
         <Customers />
         <Footer />
       </div>
