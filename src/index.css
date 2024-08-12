@@ -48,25 +48,6 @@ body {
   border-color: #ffffff;
 }
 
-@keyframes shake-in {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(40px);
-  }
-}
-
-.animate-shake-in {
-  animation: shake-in 2s ease-in;
-}
-
 @keyframes fade-in {
   0% {
     opacity: 0;

@@ -21,7 +21,6 @@ function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
         <About />
@@ -32,6 +31,7 @@ function App() {
         <Team />
         <Customers />
         <Blog />
+        <Contact />
         <Footer />
       </div>
     </Router>
