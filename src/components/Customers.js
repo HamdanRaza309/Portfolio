@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import Glasses from '../assets/images/glasses.svg';
+import { useInView } from 'react-intersection-observer';
 
 const customers = [
     {
@@ -56,6 +57,14 @@ const customers = [
 export default function Example() {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 1; // Set how many items you want per page
+    const { ref: customerRef, inView: isCustomerVisible } = useInView()
+    const [customerAnimationRun, setCustomerAnimationRun] = useState(false);
+
+    useEffect(() => {
+        if (isCustomerVisible && !customerAnimationRun) {
+            setCustomerAnimationRun(true)
+        }
+    }, [isCustomerVisible, customerAnimationRun])
 
     const totalItems = customers.length;
     const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -89,7 +98,7 @@ export default function Example() {
     }
 
     return (
-        <div className="bg-red-600 py-8 px-4 flex flex-col items-center justify-center sm:py-16 sm:px-6">
+        <div ref={customerRef} className={`bg-red-600 py-8 px-4 flex flex-col items-center justify-center sm:py-16 sm:px-6 ${customerAnimationRun ? 'animate-fade-in' : ''}`}>
             <div className="text-pink-100 text-3xl sm:text-4xl mb-2">
                 <img src={Glasses} alt="Glasses Img" className='h-16 w-auto mb-4 mx-auto sm:h-20' />
             </div>
@@ -130,8 +139,8 @@ export default function Example() {
                             onClick={() => setCurrentPage(page)}
                             aria-current={page === currentPage ? 'page' : undefined}
                             className={`relative inline-flex items-center px-3 py-1 text-sm font-semibold ${page === currentPage
-                                ? 'z-10 bg-gray-900 text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900'
-                                : 'text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0'
+                                ? 'z-10 bg-white text-black focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300'
+                                : 'text-gray-300 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0'
                                 }`}
                         >
                             {page}
