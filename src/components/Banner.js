@@ -19,7 +19,7 @@ export default function Banner(props) {
                 <p className="text-center px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10">
                     {props.desc}
                 </p>
-                <button className="bg-red-700 text-white py-2 px-4 rounded hover:bg-red-800 transition duration-300 mt-4">
+                <button className="btnForRedBg">
                     {props.buttonText}
                 </button>
             </div>

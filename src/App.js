@@ -12,6 +12,7 @@ import PricePlan from './components/PricePlan';
 import Customers from './components/Customers';
 import Team from './components/Team';
 import Blog from './components/Blog';
+import BackToTopButton from './components/BackToTopButton';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Blog />
         <Contact />
         <Footer />
+        <BackToTopButton />
       </div>
     </Router>
   );
