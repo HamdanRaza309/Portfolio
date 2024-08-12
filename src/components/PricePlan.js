@@ -55,7 +55,7 @@ export default function PricePlan() {
     ];
 
     return (
-        <div className={`flex flex-col items-center mt-16 mb-10 ${pricePlanAnimationRun2 ? 'animate-fade-in' : ''}`}>
+        <div className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 flex flex-col items-center mt-16 ${pricePlanAnimationRun2 ? 'animate-fade-in' : ''}`}>
             <div
                 ref={pricePlanRef}
                 className={`flex flex-col items-center p-5 mb-6 ${pricePlanAnimationRun1 ? 'animate-zoom-in' : ''

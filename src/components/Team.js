@@ -72,7 +72,7 @@ export default function Team() {
 
     return (
         <div ref={teamRef} className='p-4'>
-            <div className={`flex flex-col items-center p-5 mb-6 ${mainHeadingAnimationRun ? 'animate-zoom-in' : ''}`}>
+            <div className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 flex flex-col items-center p-5 ${mainHeadingAnimationRun ? 'animate-zoom-in' : ''}`}>
                 <div className="flex items-center mb-4">
                     <div className="bg-red-600 h-1 w-12 mx-1"></div>
                     <div className="bg-red-600 h-1 w-1"></div>

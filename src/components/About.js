@@ -33,7 +33,7 @@ const About = () => {
 
     return (
         <>
-            <div ref={aboutRef} className={`${aboutAnimationRun ? 'animate-fade-in' : ''} bg-white text-gray-800 min-h-screen flex flex-col lg:flex-row items-center`}>
+            <div ref={aboutRef} className={`${aboutAnimationRun ? 'animate-fade-in' : ''} bg-white text-gray-800 min-h-screen flex flex-col lg:flex-row items-center mb-4 sm:mb-6 md:mb-8 lg:mb-10 `}>
                 <img className='flex-1 object-cover m-0 w-96 h-auto transform scale-x-[-1]' src={Hamdan} alt="About Me" />
                 <div className='flex-1 flex flex-col py-3 px-10'>
                     <div className='flex items-center mb-8 '>

@@ -33,7 +33,7 @@ export default function ContactForm() {
     };
 
     return (
-        <section ref={contactRef} id="contact" className={`flex flex-col-reverse lg:flex-row gap-10 items-center  bg-red-600 text-white ${contactAnimationRun ? 'animate-fade-in' : ''}`}>
+        <section ref={contactRef} id="contact" className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 flex flex-col-reverse lg:flex-row gap-10 items-center  bg-red-600 text-white ${contactAnimationRun ? 'animate-fade-in' : ''}`}>
             <div className="flex-1 max-w-lg lg:max-w-3xl mx-auto px-24">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3">
                     Let's <span className='text-red-6'>Talk</span>

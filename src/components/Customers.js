@@ -98,7 +98,7 @@ export default function Example() {
     }
 
     return (
-        <div ref={customerRef} className={`bg-red-600 py-8 px-4 flex flex-col items-center justify-center sm:py-16 sm:px-6 ${customerAnimationRun ? 'animate-fade-in' : ''}`}>
+        <div ref={customerRef} className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 bg-red-600 py-8 px-4 flex flex-col items-center justify-center sm:py-16 sm:px-6 ${customerAnimationRun ? 'animate-fade-in' : ''}`}>
             <div className="text-pink-100 text-3xl sm:text-4xl mb-2">
                 <img src={Glasses} alt="Glasses Img" className='h-16 w-auto mb-4 mx-auto sm:h-20' />
             </div>

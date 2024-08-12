@@ -131,7 +131,7 @@ const Projects = () => {
     };
 
     return (
-        <div ref={projectsRef} className={`text-gray-800 min-h-screen flex flex-col items-center py-16 ${projectsAnimationRun ? 'animate-fade-in' : ''}`}>
+        <div ref={projectsRef} className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-gray-800 min-h-screen flex flex-col items-center py-16 ${projectsAnimationRun ? 'animate-fade-in' : ''}`}>
             <div ref={mainHeadingsRef} className={`flex flex-col items-center p-5 mb-6 ${mainHeadingsAnimationRun ? 'animate-zoom-in' : ''
                 }`}>
                 <div className="flex items-center mb-4">

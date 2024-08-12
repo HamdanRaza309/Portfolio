@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { Link } from 'react-router-dom';
 import Banner from './Banner';
 
 export default function Experience() {
@@ -48,7 +47,7 @@ export default function Experience() {
                 desc={`Welcome to my digital playground, where creativity meets technology. I'm Hamdan Raza, a developer dedicated to weaving together design and code to craft unforgettable digital experiences. My mission is to transform innovative concepts into stunning, functional solutions that captivate and engage. From designing sleek interfaces to building robust applications, I’m here to make your vision a reality. Ready to embark on a journey of creativity and tech? Let’s create something remarkable together!`}
                 buttonText={'Discover More'}
             />
-            <div ref={experienceRef} className={`flex flex-col px-10 py-5 ${experienceAnimationRun ? 'animate-fade-in' : ''}`}>
+            <div ref={experienceRef} className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 flex flex-col px-10 py-5 ${experienceAnimationRun ? 'animate-fade-in' : ''}`}>
                 <div className={`flex flex-col items-center mb-16 ${resumeAnimationRun ? 'animate-zoom-in' : ''}`}>
                     <div className='flex items-center mb-4'>
                         <div className='bg-red-600 h-1 w-12 mx-1'></div>
