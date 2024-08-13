@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { useInView } from 'react-intersection-observer';
@@ -9,7 +9,7 @@ export default function Team() {
         {
             name: 'Ahmed Ali',
             role: 'Full Stack Developer',
-            testimonial: 'Ahmed is a passionate developer with a knack for building robust and scalable applications. His attention to detail is exceptional.',
+            testimonial: 'Ahmed is a passionate developer with a knack for building robust and scalable applications.',
             linkedIn: '/',
             github: '/',
             twitter: '/',
@@ -18,7 +18,7 @@ export default function Team() {
         {
             name: 'Arman Khan',
             role: 'UI/UX Designer',
-            testimonial: 'Arman is an innovative designer who transforms ideas into visually stunning and user-friendly designs. He has a strong sense of aesthetics.',
+            testimonial: 'Arman is an innovative designer who transforms ideas into visually stunning and user-friendly designs.',
             linkedIn: '/',
             github: '/',
             twitter: '/',
@@ -27,7 +27,7 @@ export default function Team() {
         {
             name: 'Omar Siddiqui',
             role: 'Backend Developer',
-            testimonial: 'Omar specializes in backend development and database management. His ability to optimize performance is unmatched.',
+            testimonial: 'Omar specializes in backend development and database management.',
             linkedIn: '/',
             github: '/',
             twitter: '/',
@@ -36,13 +36,13 @@ export default function Team() {
         {
             name: 'Bakhtiyar Muhammad',
             role: 'Frontend Developer',
-            testimonial: 'Bakhtiyar excels in creating responsive and dynamic user interfaces. She is always up-to-date with the latest frontend technologies.',
+            testimonial: 'Bakhtiyar excels in creating responsive and dynamic user interfaces.',
             linkedIn: '/',
             github: '/',
             twitter: '/',
             image: require('../assets/images/member4.jpeg'),
         },
-    ]
+    ];
 
     const [hoverIndex, setHoverIndex] = useState(null);
     const { ref: teamRef, inView: isTeamVisible } = useInView();
@@ -79,18 +79,18 @@ export default function Team() {
                     Expert Team Members
                 </h1>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-12 w-4/5 mx-auto justify-items-center'>
+            <div className='grid 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-12 w-4/5 mx-auto justify-items-center'>
                 {teamMembers.map((member, index) => (
                     <div
                         key={index}
-                        className={`flex flex-col md:flex-row items-center w-full p-4 bg-white ${getAnimationClass(index)}`}
+                        className={`flex flex-col md:flex-row items-center w-full h-full p-4 bg-white ${getAnimationClass(index)}`}
                         onMouseEnter={() => { setHoverIndex(index) }}
                         onMouseLeave={() => { setHoverIndex(null) }}
                     >
                         <div className='flex-1 flex-shrink-0 overflow-hidden'>
-                            <img src={member.image} alt="Team Member Img" className={`w-auto h-64 object-cover transition-transform duration-300 ${hoverIndex === index ? 'scale-110' : ''} `} />
+                            <img src={member.image} alt="Team Member Img" className={`w-72 h-72 object-cover transition-transform duration-300 ${hoverIndex === index ? 'scale-110' : ''} `} />
                         </div>
-                        <div className={`flex-1 flex flex-col justify-center px-5 py-3 h-auto w-auto ${hoverIndex === index ? 'animate-bg-change' : ''} `}>
+                        <div className={`flex-1 flex flex-col justify-center px-5 py-3 h-72 w-72 ${hoverIndex === index ? 'animate-bg-change' : ''} `}>
                             <h2 className={`text-xl font-semibold mb-2 ${hoverIndex === index ? 'text-white' : 'text-red-600'} `}>{member.name}</h2>
                             <h3 className={`text-lg  mb-2 text-black`}>{member.role}</h3>
                             <p className={` mb-4 ${hoverIndex === index ? 'text-white' : 'text-gray-700'} `}>{member.testimonial}</p>
