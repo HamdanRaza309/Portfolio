@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Hamdan from '../assets/images/Hamdan.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket } from '@fortawesome/free-solid-svg-icons';
 import { useInView } from "react-intersection-observer";
 
-const About = () => {
+const About = (props) => {
     const { ref: aboutRef, inView: aboutVisible } = useInView();
     const { ref: progressRef, inView: progressVisible } = useInView();
     const { ref: rocketRef, inView: rocketVisible } = useInView();
@@ -42,10 +41,10 @@ const About = () => {
                         <p className='text-lg font-semibold ml-2'>Learn About Me</p>
                     </div>
                     <div className='flex flex-col mb-8'>
-                        <h1 className='text-5xl font-bold mb-4'>10 Years Experience</h1>
+                        <h1 className='text-5xl font-bold mb-4'>3 Years Experience</h1>
 
                         <p className='text-base leading-relaxed'>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos eum perferendis laudantium numquam odio ducimus, commodi nisi voluptatibus voluptatem dolorum sint ad quasi architecto quis corporis praesentium delectus dolor, ullam fugit suscipit. Iure, ad?
+                            I am Hamdan Raza, a skilled MERN stack developer with 3 years of experience in crafting seamless and user-friendly web applications. My expertise spans MongoDB, Express.js, React.js, and Node.js, where I specialize in building dynamic, responsive, and robust full-stack applications. Driven by a passion for technology, I deliver solutions that are both aesthetically pleasing and highly functional, exceeding client expectations.
                         </p>
                     </div>
                     <div ref={progressRef} className="w-full py-3 px-10">
@@ -114,11 +113,12 @@ const About = () => {
                             </div>
                         </div>
                         <div className="mb-6 flex items-center lg:items-start">
-                            <Link
+                            <button
+                                onClick={() => { props.handleScroll(props.refs.projectsRef) }}
                                 className="btnForWhiteBg"
                             >
-                                Learn More
-                            </Link>
+                                Explore More
+                            </button>
                             <div className="mt-4 mx-2 lg:mt-0 flex justify-center lg:justify-start">
                                 <FontAwesomeIcon
                                     ref={rocketRef}
@@ -129,10 +129,8 @@ const About = () => {
                                 />
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </>
     );

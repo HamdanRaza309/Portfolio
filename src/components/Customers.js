@@ -6,57 +6,58 @@ import { useInView } from 'react-intersection-observer';
 const customers = [
     {
         id: 1,
-        title: 'Software Development Services',
-        testimonial: "You provided exceptional backend development services. Your attention to detail and problem-solving skills greatly improved our system's performance.",
-        name: "Michael Thompson",
-        profession: "CTO, Tech Solutions Inc.",
-        image: require('../assets/images/person.jpeg'),
+        title: 'Advanced Backend Solutions',
+        testimonial: "Your backend development expertise has been a game-changer for our system. The enhanced performance and seamless integration you delivered are truly exceptional.",
+        name: "Ahsan Malik",
+        profession: "CTO, NextGen Technologies",
+        image: require('../assets/images/customer1.jpg'),
     },
     {
         id: 2,
-        title: 'Front-End Development',
-        testimonial: "Your expertise in front-end development transformed our website. The user interface is now more intuitive and visually appealing.",
-        name: "Sarah Lee",
-        profession: "CEO, Creative Web Agency",
-        image: require('../assets/images/person.jpeg'),
+        title: 'Cutting-Edge Front-End Development',
+        testimonial: "Thanks to your front-end mastery, our website now offers a stunning and user-friendly experience. Your work has elevated our online presence to new heights.",
+        name: "Farhan Ali",
+        profession: "CEO, Visionary Web Solutions",
+        image: require('../assets/images/customer2.jpg'),
     },
     {
         id: 3,
-        title: 'UI/UX Design Consultation',
-        testimonial: "Your design insights were invaluable in creating a user-friendly interface for our application. You have a keen eye for design.",
-        name: "David Green",
-        profession: "Product Manager, Innovate Apps",
-        image: require('../assets/images/person.jpeg'),
+        title: 'Innovative UI/UX Design',
+        testimonial: "Your design consultation was instrumental in crafting a sleek and intuitive user interface. Your ability to blend aesthetics with functionality is unparalleled.",
+        name: "Hassan Raza",
+        profession: "Product Manager, Creative Apps Ltd.",
+        image: require('../assets/images/customer3.jpg'),
     },
     {
         id: 4,
-        title: 'Data Analytics Integration',
-        testimonial: "You integrated complex data analytics into our system seamlessly. Your work has provided us with critical insights.",
-        name: "Jessica Roberts",
-        profession: "Head of Data, Data Insights Corp.",
-        image: require('../assets/images/person.jpeg'),
+        title: 'Data Analytics Excellence',
+        testimonial: "The complex data analytics you integrated into our system have provided us with invaluable insights. Your work is driving our data-driven decisions.",
+        name: "Zabid Ahmed",
+        profession: "Head of Data, Insight Analytics Group",
+        image: require('../assets/images/customer4.jpg'),
     },
     {
         id: 5,
-        title: 'Product Development Support',
-        testimonial: "Working with you on product development was a pleasure. Your technical knowledge and professionalism are top-notch.",
-        name: "Daniel Wilson",
-        profession: "COO, Future Tech Enterprises",
-        image: require('../assets/images/person.jpeg'),
+        title: 'Innovative Product Development',
+        testimonial: "Collaborating with you on product development has been a remarkable experience. Your technical expertise and innovative approach have been key to our success.",
+        name: "Omar Khan",
+        profession: "COO, Tech Innovators Inc.",
+        image: require('../assets/images/customer5.jpg'),
     },
     {
         id: 6,
-        title: 'Customer Support Enhancement',
-        testimonial: "Your contributions to improving our customer support system were outstanding. Our team has seen a significant boost in efficiency.",
-        name: "Laura King",
-        profession: "Customer Support Manager, ServiceNow Solutions",
-        image: require('../assets/images/person.jpeg'),
+        title: 'Enhanced Customer Support Solutions',
+        testimonial: "Your enhancements to our customer support system have dramatically improved efficiency and customer satisfaction. Your contributions have made a significant impact.",
+        name: "Amin Siddiqui",
+        profession: "Customer Support Manager, Service Excellence Ltd.",
+        image: require('../assets/images/customer6.jpg'),
     },
 ];
 
-export default function Example() {
+
+export default function Customer() {
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 1; // Set how many items you want per page
+    const itemsPerPage = 1;
     const { ref: customerRef, inView: isCustomerVisible } = useInView()
     const [customerAnimationRun, setCustomerAnimationRun] = useState(false);
 
@@ -81,13 +82,11 @@ export default function Example() {
         }
     };
 
-    const currentItem = customers[currentPage - 1]; // Get the current item based on page
+    const currentItem = customers[currentPage - 1];
 
-    // Determine the start and end page numbers for pagination buttons
     let startPage = Math.max(1, currentPage - 1);
     let endPage = Math.min(totalPages, currentPage + 1);
 
-    // Adjust start and end pages if there are fewer than 3 pages in total
     if (totalPages <= 3) {
         startPage = 1;
         endPage = totalPages;

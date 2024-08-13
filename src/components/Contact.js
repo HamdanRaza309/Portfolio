@@ -38,8 +38,8 @@ export default function ContactForm() {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3">
                     Let's <span className='text-red-6'>Talk</span>
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-center lg:text-left mb-6 lg:mb-8 text-black">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum voluptatibus cum explicabo, perferendis magni et? Libero accusamus recusandae nam expedita voluptatem aut cumque voluptates dolorem soluta exercitationem nesciunt, dolore perspiciatis.
+                <p className="text-sm sm:text-sm md:text-md lg:text-md text-center lg:text-left mb-6 lg:mb-8 dark:text-gray-300">
+                    Have a project in mind or just want to say hello? I’d love to hear from you! Whether you have a question, need some advice, or want to collaborate on an exciting project, feel free to drop me a message. Your ideas and feedback are always welcome, and I'm here to help bring your vision to life.
                 </p>
                 <form
                     onSubmit={handleSubmit}

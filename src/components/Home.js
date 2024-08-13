@@ -4,7 +4,7 @@ import bgImage from '../assets/images/blob-scatter-haikei.svg';
 
 const roles = ["HTML5 & CSS3", "JavaScript (ES6+)", "React.js", "Node.js", "Express.js", "MongoDB"];
 
-const Home = () => {
+const Home = (props) => {
     const [currentRole, setCurrentRole] = useState(0);
     const [displayedText, setDisplayedText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
@@ -44,7 +44,7 @@ const Home = () => {
                     </div>
                     <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-6">
                         <button className="btnForRedBg">Hire Me</button>
-                        <button className="btnForRedBg">Contact Me</button>
+                        <button className="btnForRedBg" onClick={() => { props.handleScroll(props.refs.contactRef) }}>Contact Me</button>
                     </div>
                 </div>
                 <div className="md:w-1/2 flex justify-center md:justify-end relative animate-zoom-in">

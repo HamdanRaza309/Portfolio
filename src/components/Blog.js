@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faTags, faCalendarAlt, faComments, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from "react-router-dom";
 
 export default function Blog() {
 
@@ -13,7 +14,8 @@ export default function Blog() {
             date: 'August 10, 2024',
             noOfComments: '12 Comments',
             testimonial: 'In this blog, we explore how to build a scalable web application using the MERN stack. From setting up the development environment to deploying the app on a cloud platform, every step is covered in detail.',
-            image: require('../assets/images/blog1.jpg')
+            image: require('../assets/images/blog1.jpg'),
+            link: './ScalableWebApp'
         },
         {
             title: 'Responsive Design: Best Practices and Techniques',
@@ -22,7 +24,8 @@ export default function Blog() {
             date: 'August 8, 2024',
             noOfComments: '8 Comments',
             testimonial: 'Responsive design is crucial for modern web applications. This blog discusses the best practices and techniques for creating a responsive user interface that works seamlessly across all devices.',
-            image: require('../assets/images/blog2.jpg')
+            image: require('../assets/images/blog2.jpg'),
+            link: './ResponsiveDesign'
         },
         {
             title: 'Optimizing Web Performance: Tips and Tricks',
@@ -31,7 +34,8 @@ export default function Blog() {
             date: 'August 5, 2024',
             noOfComments: '15 Comments',
             testimonial: 'Learn how to optimize your web application for performance. This blog covers various strategies, including code splitting, lazy loading, and minimizing HTTP requests, to make your app faster and more efficient.',
-            image: require('../assets/images/blog3.jpg')
+            image: require('../assets/images/blog3.jpg'),
+            link: './OptimizingWebPerformance'
         },
         {
             title: 'Introduction to TailwindCSS: Simplifying Your Styles',
@@ -40,7 +44,8 @@ export default function Blog() {
             date: 'August 3, 2024',
             noOfComments: '10 Comments',
             testimonial: 'TailwindCSS is a utility-first CSS framework that has taken the web development community by storm. In this blog, we introduce TailwindCSS and demonstrate how it can simplify your styling process.',
-            image: require('../assets/images/blog4.jpg')
+            image: require('../assets/images/blog4.jpg'),
+            link: './IntroToTailwindCSS'
         }
     ];
 
@@ -48,6 +53,15 @@ export default function Blog() {
     const [mainHeadingAnimationRun, setMainHeadingAnimationRun] = useState(false);
     const [blogCardsAnimationRun, setBlogCardsAnimationRun] = useState(false)
     const [hoverIndex, setHoverIndex] = useState(null);
+    const navigate = useNavigate();
+
+    const handleNavigate = (link) => {
+        navigate(link)
+    }
+
+    const goToTop = () => {
+        window.scrollTo(0, 0)
+    }
 
     useEffect(() => {
         if (isBlogsVisible && !mainHeadingAnimationRun) {
@@ -116,7 +130,12 @@ export default function Blog() {
                             </div>
                             <p className={`mb-4 flex-grow ${hoverIndex === index ? 'text-white' : ''}`}>{blog.testimonial}</p>
                             <div className='mt-auto'>
-                                <button className={` ${hoverIndex === index ? 'btnForRedBg' : 'btnForWhiteBg'}`}>
+                                <button
+                                    onClick={() => {
+                                        handleNavigate(blog.link)
+                                        goToTop()
+                                    }}
+                                    className={` ${hoverIndex === index ? 'btnForRedBg' : 'btnForWhiteBg'}`}>
                                     Read More
                                     <FontAwesomeIcon icon={faArrowRight} />
                                 </button>

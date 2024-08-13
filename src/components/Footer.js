@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faTwitter, faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 
-const socialLinks = ["#linkedIn", "#instagram", "#telegram"];
+const socialLinks = ["#linkedIn", "#instagram", "#facebook"];
 
 const Footer = () => {
     const [currentSocialLink, setCurrentSocialLink] = useState(0);
@@ -48,22 +48,22 @@ const Footer = () => {
                 </div>
                 <div className='flex flex-wrap justify-center space-x-6 md:space-x-28'>
                     <div className='flex flex-col items-center'>
-                        <Link to="#" className="items-center mb-2">
+                        <Link target='_blank' to="https://www.linkedin.com/in/hamdan-raza-8790a02b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="items-center mb-2">
                             <FontAwesomeIcon icon={faLinkedin} className='text-4xl md:text-5xl mb-2 text-blue-600' />
                         </Link>
                         <p className='text-xl md:text-2xl'>Hamdan Raza</p>
                     </div>
                     <div className='flex flex-col items-center'>
-                        <Link to="#" className="items-center mb-2">
+                        <Link target='_blank' to="https://www.instagram.com/khan_arman309?igsh=MTlucjF4b2ZmaGg3eQ==" className="items-center mb-2">
                             <FontAwesomeIcon icon={faInstagram} className='text-4xl md:text-5xl mb-2 text-pink-600' />
                         </Link>
                         <p className='text-xl md:text-2xl'>Khan Arman</p>
                     </div>
                     <div className='flex flex-col items-center'>
-                        <Link to="#" className="items-center mb-2">
-                            <FontAwesomeIcon icon={faTelegram} className='text-4xl md:text-5xl mb-2 text-blue-700' />
+                        <Link target='_blank' to="https://www.facebook.com/Remeo.hamdan?mibextid=ZbWKwL" className="items-center mb-2">
+                            <FontAwesomeIcon icon={faFacebook} className='text-4xl md:text-5xl mb-2 text-blue-700' />
                         </Link>
-                        <p className='text-xl md:text-2xl'>Hamdan Raza</p>
+                        <p className='text-xl md:text-2xl'>Khan Arman</p>
                     </div>
                 </div>
             </div>
@@ -84,23 +84,23 @@ const Footer = () => {
                             <div className="w-full sm:w-1/2 md:w-1/4 mb-6">
                                 <h3 className="text-lg font-semibold mb-4">GET IN TOUCH</h3>
                                 <div className="flex flex-col justify-center items-center lg:items-start">
-                                    <Link to="#" className="flex justify-between items-center text-gray-400 hover:text-red-600 mb-2">
+                                    <Link target='_blank' to="https://www.facebook.com/Remeo.hamdan?mibextid=ZbWKwL" className="flex justify-between items-center text-gray-400 hover:text-white mb-2">
                                         Facebook
                                         <FontAwesomeIcon icon={faFacebook} className='ml-2' />
                                     </Link>
-                                    <Link to="#" className="flex justify-between items-center text-gray-400 hover:text-red-600 mb-2">
+                                    <Link target='_blank' to="https://www.instagram.com/khan_arman309?igsh=MTlucjF4b2ZmaGg3eQ==" className="flex justify-between items-center text-gray-400 hover:text-white mb-2">
                                         Instagram
                                         <FontAwesomeIcon icon={faInstagram} className='ml-2' />
                                     </Link>
-                                    <Link to="#" className="flex justify-between items-center text-gray-400 hover:text-red-600 mb-2">
+                                    <Link target='_blank' to="#" className="flex justify-between items-center text-gray-400 hover:text-white mb-2">
                                         Twitter
                                         <FontAwesomeIcon icon={faTwitter} className='ml-2' />
                                     </Link>
-                                    <Link to="#" className="flex justify-between items-center text-gray-400 hover:text-red-600 mb-2">
+                                    <Link target='_blank' to="https://github.com/HamdanRaza309" className="flex justify-between items-center text-gray-400 hover:text-white mb-2">
                                         Github
                                         <FontAwesomeIcon icon={faGithub} className='ml-2' />
                                     </Link>
-                                    <Link to="#" className="flex justify-between items-center text-gray-400 hover:text-red-600 mb-2">
+                                    <Link target='_blank' to="https://www.linkedin.com/in/hamdan-raza-8790a02b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="flex justify-between items-center text-gray-400 hover:text-white mb-2">
                                         LinkedIn
                                         <FontAwesomeIcon icon={faLinkedin} className='ml-2' />
                                     </Link>
@@ -109,10 +109,11 @@ const Footer = () => {
                             <div className="w-full sm:w-1/2 md:w-1/4 mb-6">
                                 <h3 className="text-lg font-semibold mb-4">SERVICES</h3>
                                 <ul className="text-gray-400 space-y-2">
-                                    <li><Link to="/services#web-development" className="hover:text-red-600">Web Development</Link></li>
-                                    <li><Link to="/services#ui-ux" className="hover:text-red-600">UI/UX Design</Link></li>
-                                    <li><Link to="/services#seo" className="hover:text-red-600">SEO Optimization</Link></li>
-                                    <li><Link to="/services#consulting" className="hover:text-red-600">Consulting</Link></li>
+                                    <li><Link to="#" className="hover:text-white">Web Development</Link></li>
+                                    <li><Link to="#" className="hover:text-white">UI/UX Design</Link></li>
+                                    <li><Link to="#" className="hover:text-white">SEO Optimization</Link></li>
+                                    <li><Link to="#" className="hover:text-white">API Development</Link></li>
+                                    <li><Link to="#" className="hover:text-white">SEO Optimization</Link></li>
                                 </ul>
                             </div>
                         </div>

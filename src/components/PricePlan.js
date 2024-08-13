@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
-import Banner from "./Banner"
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
 export default function PricePlan() {
     const { ref: pricePlanRef, inView: pricePlanVisible } = useInView();
@@ -10,6 +9,11 @@ export default function PricePlan() {
     const [pricePlanAnimationRun1, setPricePlanAnimationRun1] = useState(false);
     const [pricePlanAnimationRun2, setPricePlanAnimationRun2] = useState(false);
     const [pricePlanCardAnimationRun, setPricePlanCardAnimationRun] = useState(false);
+    const [getPlan, setGetPlan] = useState(false)
+
+    const handleCloseModal = () => {
+        setGetPlan(false)
+    }
 
     useEffect(() => {
         if (pricePlanVisible && !pricePlanAnimationRun1) {
@@ -88,18 +92,59 @@ export default function PricePlan() {
                                 </li>
                             ))}
                         </ul>
-                        <Link to="/contact" className="btnForWhiteBg">
+                        <button
+                            to="/contact"
+                            className="btnForWhiteBg"
+                            onClick={() => { setGetPlan(true) }}
+                        >
                             Get Plan
-                        </Link>
+                        </button>
                     </div>
                 ))}
             </div>
-            <Banner
-                sideHeading={'Transforming Ideas into Reality'}
-                heading={<span>Crafting<span className="text-black"> Code </span>with Creativity</span>}
-                desc={'Passionate about developing immersive and engaging experiences, I seamlessly blend design with functionality to create impactful digital solutions. With a keen eye for detail and a love for innovation, I strive to push the boundaries of what’s possible and bring unique visions to life. Whether it’s building dynamic web applications or crafting intuitive user interfaces, my goal is to deliver exceptional results that make a difference. Let’s collaborate and build something extraordinary together!'}
-                buttonText={'Explore My Work'}
-            />
+
+            {getPlan && (
+                <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-lg max-w-lg w-full p-6 relative">
+                        <button
+                            className="absolute top-0 right-0 btnForWhiteBg text-lg text-gray-600 hover:text-gray-900"
+
+                            onClick={handleCloseModal}
+                        >
+                            <FontAwesomeIcon icon={faMinus} size="lg" />
+                        </button>
+                        <h2 className="text-2xl font-bold mb-4 text-center">Get Your Plan</h2>
+                        <p className="text-gray-700 mb-6 text-center">
+                            Please fill out the form below to get started with your selected plan. We will get back to you shortly.
+                        </p>
+                        <form className="space-y-4">
+                            <input
+                                type="text"
+                                placeholder="Full Name"
+                                className="w-full p-3 border border-gray-300 rounded"
+                                required
+                            />
+                            <input
+                                type="email"
+                                placeholder="Email Address"
+                                className="w-full p-3 border border-gray-300 rounded"
+                                required
+                            />
+                            <textarea
+                                placeholder="Additional Information (optional)"
+                                className="w-full p-3 border border-gray-300 rounded"
+                                rows="4"
+                            ></textarea>
+                            <button
+                                type="submit"
+                                className="btnForWhiteBg w-full"
+                            >
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

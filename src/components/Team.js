@@ -44,8 +44,6 @@ export default function Team() {
         },
     ]
 
-
-
     const [hoverIndex, setHoverIndex] = useState(null);
     const { ref: teamRef, inView: isTeamVisible } = useInView();
     const [mainHeadingAnimationRun, setMainHeadingAnimationRun] = useState(false);
@@ -65,7 +63,6 @@ export default function Team() {
 
     function getAnimationClass(index) {
         if (!teamMembersAnimationRun) return '';
-        // Use modulo to cycle animations
         const animations = ['animate-slide-in-left', 'animate-slide-in-right'];
         return animations[index % 2];
     }

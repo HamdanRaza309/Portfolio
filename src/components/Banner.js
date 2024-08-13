@@ -19,7 +19,9 @@ export default function Banner(props) {
                 <p className="text-center px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10">
                     {props.desc}
                 </p>
-                <button className="btnForRedBg">
+                <button
+                    onClick={() => { props.handleScroll(props.refs.teamRef) }}
+                    className="btnForRedBg">
                     {props.buttonText}
                 </button>
             </div>
