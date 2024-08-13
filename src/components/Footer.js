@@ -80,7 +80,7 @@ const Footer = () => {
                             </p>
                         </div>
                         {/* Right Sections */}
-                        <div className="w-full lg:w-2/3 flex flex-wrap justify-center lg:justify-between">
+                        <div className="w-full lg:w-2/3 flex flex-wrap justify-center lg:justify-evenly">
                             <div className="w-full sm:w-1/2 md:w-1/4 mb-6">
                                 <h3 className="text-lg font-semibold mb-4">GET IN TOUCH</h3>
                                 <div className="flex flex-col justify-center items-center lg:items-start">

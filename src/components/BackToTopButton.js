@@ -5,7 +5,7 @@ import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 const BackToTopButton = () => {
     const scrollToTop = () => {
         let scrollHeight = window.scrollY; // Get the current scroll position
-        const scrollStep = 50; // Step size (pixels to scroll each time)
+        const scrollStep = 100; // Step size (pixels to scroll each time)
         const delay = 10; // Delay between steps (milliseconds)
 
         const scroll = () => {

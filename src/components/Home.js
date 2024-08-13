@@ -30,7 +30,7 @@ const Home = () => {
     }, [displayedText, isDeleting, currentRole]);
 
     return (
-        <div style={{ backgroundImage: `url(${bgImage})`, height: '110vh' }} className="mb-4 sm:mb-6 md:mb-8 lg:mb-10 z-10 p-24 flex items-center justify-center text-white overflow-hidden">
+        <div style={{ backgroundImage: `url(${bgImage})`, height: '110vh' }} className=" z-10 p-24 flex items-center justify-center text-white overflow-hidden">
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8 relative">
                 <div className="flex flex-col md:w-1/2 space-y-4 text-center md:text-left">
                     <div className="inline-flex items-center animate-zoom-in">
