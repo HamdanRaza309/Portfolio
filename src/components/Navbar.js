@@ -36,6 +36,24 @@ const Navbar = ({ handleScroll, refs }) => {
         };
     }, []);
 
+    const goToTop = () => {
+        let scrollHeight = window.scrollY; // Get the current scroll position
+        const scrollStep = 100; // Step size (pixels to scroll each time)
+        const delay = 10; // Delay between steps (milliseconds)
+
+        const scroll = () => {
+            if (scrollHeight > 0) {
+                window.scrollBy(0, -scrollStep); // Scroll up
+                scrollHeight -= scrollStep; // Decrease the scroll height
+                setTimeout(scroll, delay); // Continue scrolling after delay
+            } else {
+                window.scrollTo(0, 0); // Ensure we're at the top
+            }
+        };
+
+        scroll();
+    }
+
     return (
         <nav className={`${bgColor} ${textColor} ${height} sticky w-full z-10 top-0 shadow-md transition-all duration-500`}>
             <div className="container mx-auto px-4 py-2 flex justify-between items-center h-full max-w-full sm:max-w-screen-md md:max-w-screen-lg">
@@ -43,16 +61,16 @@ const Navbar = ({ handleScroll, refs }) => {
                     Hamdan Raza
                 </div>
                 <div className="hidden md:flex space-x-4 items-center h-full">
-                    <Link to='/' className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Home</Link>
-                    <Link to='/' onClick={() => handleScroll(refs.aboutRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>About</Link>
-                    <Link to='/' onClick={() => handleScroll(refs.servicesRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Services</Link>
-                    <Link to='/' onClick={() => handleScroll(refs.experienceRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Experience</Link>
-                    <Link to='/' onClick={() => handleScroll(refs.projectsRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Projects</Link>
-                    <Link to='/' onClick={() => handleScroll(refs.pricePlanRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Pricing</Link>
-                    <Link to='/' onClick={() => handleScroll(refs.teamRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Team</Link>
-                    <Link to='/' onClick={() => handleScroll(refs.customersRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Review</Link>
-                    <Link to='/' onClick={() => handleScroll(refs.blogRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Blog</Link>
-                    <Link to='/' onClick={() => handleScroll(refs.contactRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Contact</Link>
+                    <Link to='/' onClick={goToTop} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Home</Link>
+                    <Link to='' onClick={() => handleScroll(refs.aboutRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>About</Link>
+                    <Link to='' onClick={() => handleScroll(refs.servicesRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Services</Link>
+                    <Link to='' onClick={() => handleScroll(refs.experienceRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Experience</Link>
+                    <Link to='' onClick={() => handleScroll(refs.projectsRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Projects</Link>
+                    <Link to='' onClick={() => handleScroll(refs.pricePlanRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Pricing</Link>
+                    <Link to='' onClick={() => handleScroll(refs.teamRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Team</Link>
+                    <Link to='' onClick={() => handleScroll(refs.customersRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Review</Link>
+                    <Link to='' onClick={() => handleScroll(refs.blogRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Blog</Link>
+                    <Link to='' onClick={() => handleScroll(refs.contactRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Contact</Link>
                 </div>
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="focus:outline-none text-xl">
