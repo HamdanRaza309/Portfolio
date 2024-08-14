@@ -12,7 +12,9 @@ const Home = (props) => {
     useEffect(() => {
         const handleText = () => {
             const fullText = roles[currentRole];
-            const updatedText = isDeleting ? fullText.substring(0, displayedText.length - 1) : fullText.substring(0, displayedText.length + 1);
+            const updatedText = isDeleting
+                ? fullText.substring(0, displayedText.length - 1)
+                : fullText.substring(0, displayedText.length + 1);
             setDisplayedText(updatedText);
 
             if (!isDeleting && updatedText === fullText) {
@@ -29,8 +31,21 @@ const Home = (props) => {
         };
     }, [displayedText, isDeleting, currentRole]);
 
+    // There is some problem in this code, Resume is downloaded but it do not open.
+    const handleDownloadResume = () => {
+        fetch(`/files/Resume.pdf`).then(res => res.blob()).then(blob => {
+            const blobURL = window.URL.createObjectURL(new Blob([blob]));
+            const aTag = document.createElement('a');
+            aTag.href = blobURL;
+            aTag.setAttribute('download', 'Hamdan Raza Resume.pdf');
+            document.body.appendChild(aTag);
+            aTag.click();
+            aTag.remove();
+        });
+    };
+
     return (
-        <div style={{ backgroundImage: `url(${bgImage})`, height: '110vh' }} className=" z-10 p-24 flex items-center justify-center text-white overflow-hidden">
+        <div style={{ backgroundImage: `url(${bgImage})`, height: '110vh' }} className="z-10 p-24 flex items-center justify-center text-white overflow-hidden">
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8 relative">
                 <div className="flex flex-col md:w-1/2 space-y-4 text-center md:text-left">
                     <div className="inline-flex items-center animate-zoom-in">
@@ -43,12 +58,19 @@ const Home = (props) => {
                         <h2 className="text-4xl md:text-4xl">{displayedText}</h2>
                     </div>
                     <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-6">
-                        <button className="btnForRedBg">Hire Me</button>
-                        <button className="btnForRedBg" onClick={() => { props.handleScroll(props.refs.contactRef) }}>Contact Me</button>
+                        <button
+                            onClick={handleDownloadResume}
+                            className="btnForRedBg"
+                        >
+                            Download Resume
+                        </button>
+                        <button className="btnForRedBg" onClick={() => { props.handleScroll(props.refs.contactRef) }}>
+                            Contact Me
+                        </button>
                     </div>
                 </div>
                 <div className="md:w-1/2 flex justify-center md:justify-end relative animate-zoom-in">
-                    <img src={profile} alt="DP" className="h-96 md:w-full relative " />
+                    <img src={profile} alt="DP" className="h-96 md:w-full relative" />
                 </div>
             </div>
         </div>
@@ -56,3 +78,4 @@ const Home = (props) => {
 };
 
 export default Home;
+
