@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -18,8 +18,22 @@ import ScalableWebApp from "./components/ScalableWebApp";
 import ResponsiveDesign from "./components/ResponsiveDesign";
 import OptimizingWebPerformance from "./components/OptimizingWebPerformance";
 import IntroToTailwindCSS from "./components/IntroToTailwindCSS";
+import Alert from './components/Alert';
 
 function App() {
+
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type) => {
+    setAlert({
+      message: message,
+      type: type,
+    });
+    setTimeout(() => {
+      setAlert(null);
+    }, 3000);
+  };
+
   const aboutRef = useRef(null);
   const servicesRef = useRef(null);
   const experienceRef = useRef(null);
@@ -73,6 +87,7 @@ function App() {
           blogRef,
           contactRef
         }} />
+        <Alert alert={alert} />
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={
@@ -106,7 +121,7 @@ function App() {
                 <div ref={teamRef}><Team /></div>
                 <div ref={customersRef}><Customers /></div>
                 <div ref={blogRef}><Blog /></div>
-                <div ref={contactRef}><Contact /></div>
+                <div ref={contactRef}><Contact showAlert={showAlert} /></div>
               </>
             } />
             <Route path="/ScalableWebApp" element={<ScalableWebApp />} />

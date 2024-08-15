@@ -3,7 +3,7 @@ import Img from '../assets/images/Hamdan2.jpg';
 import { useInView } from 'react-intersection-observer';
 import emailjs from '@emailjs/browser';
 
-export default function ContactForm() {
+export default function ContactForm(props) {
     const { ref: contactRef, inView: contactVisible } = useInView();
     const [contactAnimationRun, setContactAnimationRun] = useState(false);
     const form = useRef();
@@ -37,10 +37,10 @@ export default function ContactForm() {
             })
             .then(
                 () => {
-                    console.log('SUCCESS!');
+                    props.showAlert('Emaail is Sent Successfully', 'success')
                 },
                 (error) => {
-                    console.log('FAILED...', error.text);
+                    props.showAlert('Email is not Sent', 'danger')
                 },
             );
     };
@@ -104,7 +104,7 @@ export default function ContactForm() {
                             type="text"
                             name="from_org"
                             id="orgName"
-                            value={formData.from_Org}
+                            value={formData.from_org}
                             onChange={handleChange}
                             className="border border-gray-700 bg-gray-800 p-3 focus:outline-none focus:ring-2 focus:ring-white"
                             placeholder="Enter your Organization Name"
