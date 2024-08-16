@@ -70,32 +70,23 @@ const Projects = () => {
     const [projects, setProjects] = useState(initialProjects);
     const [selectedImage, setSelectedImage] = useState(null);
     const [githubLink, setGithubLink] = useState(null);
-    const [mainHeadingsAnimationRun, setMainHeadingsAnimationRun] = useState(false);
-    const { ref: mainHeadingsRef, inView: mainHeadingsVisible } = useInView();
-    const [projectsAnimationRun, setProjectsAnimationRun] = useState(false);
     const { ref: projectsRef, inView: projectsVisible } = useInView();
-    const [projectCardAnimationRun, setProjectCardAnimationRun] = useState(false);
-    const { ref: projectCardRef, inView: projectCardVisible } = useInView();
+    const [mainHeadingsAnimationRun, setMainHeadingsAnimationRun] = useState(false);
+    const [projectsAnimationRun, setProjectsAnimationRun] = useState(false);
 
 
     // Animations 
     useEffect(() => {
-        if (mainHeadingsVisible && !mainHeadingsAnimationRun) {
+        if (projectsVisible && !mainHeadingsAnimationRun) {
             setMainHeadingsAnimationRun(true)
         }
-    }, [mainHeadingsVisible, mainHeadingsAnimationRun])
+    }, [projectsVisible, mainHeadingsAnimationRun])
 
     useEffect(() => {
         if (projectsVisible && !projectsAnimationRun) {
             setProjectsAnimationRun(true)
         }
     }, [projectsVisible, projectsAnimationRun])
-
-    useEffect(() => {
-        if (projectCardVisible && !projectCardAnimationRun) {
-            setProjectCardAnimationRun(true)
-        }
-    }, [projectCardVisible, projectCardAnimationRun])
 
 
     // Open Project's Image or Redirect to Github
@@ -131,8 +122,8 @@ const Projects = () => {
     };
 
     return (
-        <div ref={projectsRef} className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-gray-800 min-h-screen flex flex-col items-center py-16 ${projectsAnimationRun ? 'animate-fade-in' : ''}`}>
-            <div ref={mainHeadingsRef} className={`flex flex-col items-center p-5 mb-6 ${mainHeadingsAnimationRun ? 'animate-zoom-in' : ''
+        <div ref={projectsRef} className={` mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-gray-800 min-h-screen flex flex-col items-center py-16 ${projectsAnimationRun ? 'animate-fade-in' : ''}`}>
+            <div ref={projectsRef} className={`flex flex-col items-center p-5 mb-6 ${mainHeadingsAnimationRun ? 'animate-zoom-in' : ''
                 }`}>
                 <div className="flex items-center mb-4">
                     <div className="bg-red-600 h-1 w-12 mx-1"></div>
@@ -143,24 +134,24 @@ const Projects = () => {
                     My Excellent Projects
                 </h1>
             </div>
-            <div className="flex mb-8">
-                <button onClick={showAllProjects} className="btnForWhiteBg mx-1">
+            <div className="flex flex-wrap mb-8">
+                <button onClick={showAllProjects} className="btnForWhiteBg mx-1 my-1">
                     All
                 </button>
-                <button onClick={showJavascriptProjects} className="btnForWhiteBg mx-1">
+                <button onClick={showJavascriptProjects} className="btnForWhiteBg mx-1 my-1">
                     Javascript
                 </button>
-                <button onClick={showReactProjects} className="btnForWhiteBg mx-1">
+                <button onClick={showReactProjects} className="btnForWhiteBg mx-1 my-1">
                     React
                 </button>
-                <button onClick={showMernStack} className="btnForWhiteBg mx-1">
+                <button onClick={showMernStack} className="btnForWhiteBg mx-1 my-1">
                     Mern Stack
                 </button>
             </div>
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <div ref={projectCardRef} key={index} className={`relative bg-white overflow-hidden ${projectCardAnimationRun ? 'animate-fade-in' : ''}`}>
+                        <div key={index} className={`relative bg-white overflow-hidden`}>
                             <img
                                 src={project.image}
                                 alt={project.title}

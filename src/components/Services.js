@@ -22,7 +22,7 @@ const Services = () => {
     }, [serviceVisible, serviceAnimationRun]);
 
     return (
-        <div ref={serviceRef} className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 py-16 px-6 sm:px-8 md:px-16 lg:px-20 ${serviceAnimationRun ? 'animate-fade-in' : ''}`}>
+        <div ref={serviceRef} className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 py-16 px-2 sm:px-3 md:px-5 lg:px-7 ${serviceAnimationRun ? 'animate-fade-in' : ''}`}>
             <div className={`flex flex-col items-center mb-12 ${serviceAnimationRun ? 'animate-zoom-in' : ''}`}>
                 <div className='flex items-center mb-4'>
                     <div className='bg-red-600 h-1 w-12 mx-1'></div>

@@ -59,10 +59,6 @@ export default function Blog() {
         navigate(link)
     }
 
-    const goToTop = () => {
-        window.scrollTo(0, 0)
-    }
-
     useEffect(() => {
         if (isBlogsVisible && !mainHeadingAnimationRun) {
             setMainHeadingAnimationRun(true)
@@ -133,7 +129,6 @@ export default function Blog() {
                                 <button
                                     onClick={() => {
                                         handleNavigate(blog.link)
-                                        goToTop()
                                     }}
                                     className={` ${hoverIndex === index ? 'btnForRedBg' : 'btnForWhiteBg'}`}>
                                     Read More

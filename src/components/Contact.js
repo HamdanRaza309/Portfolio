@@ -17,7 +17,7 @@ export default function ContactForm(props) {
     const [formData, setFormData] = useState({
         from_name: '',
         from_email: '',
-        from_Org: '',
+        from_org: '',
         from_services: '',
         ref: '',
         message: ''
@@ -37,7 +37,15 @@ export default function ContactForm(props) {
             })
             .then(
                 () => {
-                    props.showAlert('Emaail is Sent Successfully', 'success')
+                    props.showAlert('Email is Sent Successfully', 'success')
+                    setFormData({
+                        from_name: '',
+                        from_email: '',
+                        from_org: '',
+                        from_services: '',
+                        from_ref: '',
+                        message: ''
+                    })
                 },
                 (error) => {
                     props.showAlert('Email is not Sent', 'danger')
@@ -51,20 +59,20 @@ export default function ContactForm(props) {
             id="contact"
             className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 flex flex-col-reverse lg:flex-row gap-10 items-center bg-red-600 text-white ${contactAnimationRun ? 'animate-fade-in' : ''}`}
         >
-            <div className="flex-1 max-w-lg lg:max-w-3xl mx-auto px-24 py-5">
+            <div className="flex-1 max-w-lg lg:max-w-3xl mx-auto px-5 py-5">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3">
                     Let's <span className="text-red-6">Talk</span>
                 </h2>
-                <p className="text-sm sm:text-sm md:text-md lg:text-md text-center lg:text-left mb-6 lg:mb-8 dark:text-gray-300">
+                <p className="text-sm sm:text-sm md:text-md lg:text-md text-center lg:text-left mb-3 lg:mb-4 dark:text-gray-300">
                     Have a project in mind or just want to say hello? I’d love to hear from you! Whether you have a question, need some advice, or want to collaborate on an exciting project, feel free to drop me a message. Your ideas and feedback are always welcome, and I'm here to help bring your vision to life.
                 </p>
                 <form
                     ref={form}
                     onSubmit={sendEmail}
-                    className="space-y-6 p-4 lg:p-8"
+                    className="space-y-3 p-2 lg:p-4"
                 >
                     <div className="flex flex-col">
-                        <label htmlFor="name" className="text-lg font-semibold mb-2">
+                        <label htmlFor="name" className="text-lg font-semibold">
                             Your Name
                         </label>
                         <input
@@ -81,7 +89,7 @@ export default function ContactForm(props) {
                     </div>
 
                     <div className="flex flex-col">
-                        <label htmlFor="email" className="text-lg font-semibold mb-2">
+                        <label htmlFor="email" className="text-lg font-semibold">
                             Email Address
                         </label>
                         <input
@@ -97,7 +105,7 @@ export default function ContactForm(props) {
                         />
                     </div>
                     <div className="flex flex-col">
-                        <label htmlFor="orgName" className="text-lg font-semibold mb-2">
+                        <label htmlFor="orgName" className="text-lg font-semibold">
                             Your Organization
                         </label>
                         <input
@@ -108,12 +116,11 @@ export default function ContactForm(props) {
                             onChange={handleChange}
                             className="border border-gray-700 bg-gray-800 p-3 focus:outline-none focus:ring-2 focus:ring-white"
                             placeholder="Enter your Organization Name"
-                            required
                             aria-label="Your Organization"
                         />
                     </div>
                     <div className="flex flex-col">
-                        <label htmlFor="services" className="text-lg font-semibold mb-2">
+                        <label htmlFor="services" className="text-lg font-semibold">
                             What services are you looking for?
                         </label>
                         <input
@@ -128,32 +135,32 @@ export default function ContactForm(props) {
                             aria-label="What services are you looking for?"
                         />
                     </div>
-                    {/* <div className="flex flex-col">
-                        <label htmlFor="ref" className="text-lg font-semibold mb-2">
+                    <div className="flex flex-col">
+                        <label htmlFor="ref" className="text-lg font-semibold">
                             How did you hear about us?
                         </label>
                         <select
                             name="from_ref"
                             id="ref"
-                            value={formData.ref}
+                            value={formData.from_ref}
                             onChange={handleChange}
                             className="border border-gray-700 bg-gray-800 p-3 focus:outline-none focus:ring-2 focus:ring-white"
                             required
                             aria-label="How did you hear about us?"
                         >
-                            <option value="" disabled>
+                            <option value="options">
                                 Options*
                             </option>
                             <option value="socialMedia">Social Media</option>
                             <option value="friendsOrColleagues">Friends or Colleagues</option>
                             <option value="internetSearch">Internet Search</option>
                             <option value="referral">Referral</option>
-                            <option value="Other">Other</option>
+                            <option value="other">Other</option>
                         </select>
-                    </div> */}
+                    </div>
 
                     <div className="flex flex-col">
-                        <label htmlFor="message" className="text-lg font-semibold mb-2">
+                        <label htmlFor="message" className="text-lg font-semibold">
                             Project Overview
                         </label>
                         <textarea
@@ -163,7 +170,6 @@ export default function ContactForm(props) {
                             onChange={handleChange}
                             className="border border-gray-700 bg-gray-800 p-3 h-32 focus:outline-none focus:ring-2 focus:ring-white"
                             placeholder="Tell us about your Project..."
-                            required
                             aria-label="Project Overview"
                         ></textarea>
                     </div>

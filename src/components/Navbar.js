@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import Logo from '../assets/images/logo.png';
 
 const Navbar = ({ handleScroll, refs }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +10,8 @@ const Navbar = ({ handleScroll, refs }) => {
     const [textColor, setTextColor] = useState('text-white');
     const [hoverTextColor, setHoverTextColor] = useState('hover:text-black');
     const [height, setHeight] = useState('h-28');
+
+    const location = useLocation();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -54,23 +57,30 @@ const Navbar = ({ handleScroll, refs }) => {
         scroll();
     }
 
+    // Determine if only the Home link should be shown
+    const showOnlyHome = ['/ScalableWebApp', '/ResponsiveDesign', '/OptimizingWebPerformance', '/IntroToTailwindCSS'].includes(location.pathname);
+
     return (
         <nav className={`${bgColor} ${textColor} ${height} sticky w-full z-10 top-0 shadow-md transition-all duration-500`}>
             <div className="container mx-auto px-4 py-2 flex justify-between items-center h-full max-w-full sm:max-w-screen-md md:max-w-screen-lg">
                 <div className="text-xl md:text-2xl font-bold">
-                    Hamdan Raza
+                    <img className='h-16 w-28' src={Logo} alt="Logo" />
                 </div>
                 <div className="hidden md:flex space-x-4 items-center h-full">
                     <Link to='/' onClick={goToTop} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Home</Link>
-                    <Link to='' onClick={() => handleScroll(refs.aboutRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>About</Link>
-                    <Link to='' onClick={() => handleScroll(refs.servicesRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Services</Link>
-                    <Link to='' onClick={() => handleScroll(refs.experienceRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Experience</Link>
-                    <Link to='' onClick={() => handleScroll(refs.projectsRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Projects</Link>
-                    <Link to='' onClick={() => handleScroll(refs.pricePlanRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Pricing</Link>
-                    <Link to='' onClick={() => handleScroll(refs.teamRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Team</Link>
-                    <Link to='' onClick={() => handleScroll(refs.customersRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Review</Link>
-                    <Link to='' onClick={() => handleScroll(refs.blogRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Blog</Link>
-                    <Link to='' onClick={() => handleScroll(refs.contactRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Contact</Link>
+                    {!showOnlyHome && (
+                        <>
+                            <Link to='' onClick={() => handleScroll(refs.aboutRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>About</Link>
+                            <Link to='' onClick={() => handleScroll(refs.servicesRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Services</Link>
+                            <Link to='' onClick={() => handleScroll(refs.experienceRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Experience</Link>
+                            <Link to='' onClick={() => handleScroll(refs.projectsRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Projects</Link>
+                            <Link to='' onClick={() => handleScroll(refs.pricePlanRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Pricing</Link>
+                            <Link to='' onClick={() => handleScroll(refs.teamRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Team</Link>
+                            <Link to='' onClick={() => handleScroll(refs.customersRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Review</Link>
+                            <Link to='' onClick={() => handleScroll(refs.blogRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Blog</Link>
+                            <Link to='' onClick={() => handleScroll(refs.contactRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Contact</Link>
+                        </>
+                    )}
                 </div>
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="focus:outline-none text-xl">
@@ -81,16 +91,20 @@ const Navbar = ({ handleScroll, refs }) => {
             {isOpen && (
                 <div className="md:hidden bg-gray-800 text-white">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <Link to='/' onClick={() => handleScroll(refs.homeRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Home</Link>
-                        <Link to='/' onClick={() => handleScroll(refs.aboutRef)} className={`block text-sm font-bold ${hoverTextColor}`}>About</Link>
-                        <Link to='/' onClick={() => handleScroll(refs.servicesRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Services</Link>
-                        <Link to='/' onClick={() => handleScroll(refs.experienceRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Experience</Link>
-                        <Link to='/' onClick={() => handleScroll(refs.projectsRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Projects</Link>
-                        <Link to='/' onClick={() => handleScroll(refs.pricePlanRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Pricing</Link>
-                        <Link to='/' onClick={() => handleScroll(refs.teamRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Team</Link>
-                        <Link to='/' onClick={() => handleScroll(refs.customersRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Review</Link>
-                        <Link to='/' onClick={() => handleScroll(refs.blogRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Blog</Link>
-                        <Link to='/' onClick={() => handleScroll(refs.contactRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Contact</Link>
+                        <Link to='/' onClick={goToTop} className={`block text-sm font-bold ${hoverTextColor}`}>Home</Link>
+                        {!showOnlyHome && (
+                            <>
+                                <Link to='/' onClick={() => handleScroll(refs.aboutRef)} className={`block text-sm font-bold ${hoverTextColor}`}>About</Link>
+                                <Link to='/' onClick={() => handleScroll(refs.servicesRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Services</Link>
+                                <Link to='/' onClick={() => handleScroll(refs.experienceRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Experience</Link>
+                                <Link to='/' onClick={() => handleScroll(refs.projectsRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Projects</Link>
+                                <Link to='/' onClick={() => handleScroll(refs.pricePlanRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Pricing</Link>
+                                <Link to='/' onClick={() => handleScroll(refs.teamRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Team</Link>
+                                <Link to='/' onClick={() => handleScroll(refs.customersRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Review</Link>
+                                <Link to='/' onClick={() => handleScroll(refs.blogRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Blog</Link>
+                                <Link to='/' onClick={() => handleScroll(refs.contactRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Contact</Link>
+                            </>
+                        )}
                     </div>
                 </div>
             )}

@@ -7,8 +7,9 @@
 body {
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
 }
-
 
 /* button */
 .btnForWhiteBg {
@@ -84,7 +85,6 @@ body {
 .animate-zoom-in {
   animation: zoom-in .7s ease-in;
 }
-
 
 @keyframes slide-in-left {
   0% {
@@ -295,7 +295,6 @@ body {
     transform: translateX(300px) scale(3.5) translate3D(100vw, -100vh, 0) rotate(5deg);
   }
 }
-
 
 @keyframes bgChange {
   from {
