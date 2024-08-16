@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Img from '../assets/images/blog2.jpg';
+import CopyButton from './CopyButton';
 
 const ResponsiveDesign = () => {
     useEffect(() => {
@@ -66,6 +67,7 @@ const ResponsiveDesign = () => {
                         <pre className="bg-gray-200 text-green-500 p-4 rounded text-sm sm:text-base md:text-lg overflow-x-auto whitespace-pre-wrap mt-2">
                             {`<meta name="viewport" content="width=device-width, initial-scale=1.0">`}
                         </pre>
+                        <CopyButton text={`<meta name="viewport" content="width=device-width, initial-scale=1.0">`} />
                     </div>
 
                     <div className="bg-gray-100 border-l-4 border-red-500 p-4 rounded-lg shadow-lg">

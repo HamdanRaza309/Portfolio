@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Img from '../assets/images/blog1.jpg';
 import { Link } from 'react-router-dom';
+import CopyButton from './CopyButton';
 
 const ScalableWebApp = () => {
     useEffect(() => {
@@ -89,6 +90,14 @@ app.listen(port, () => {
     console.log(\`Server running on port \${port}\`);
 });`}
                         </pre>
+                        <CopyButton text={`const express = require('express');
+const app = express();
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+    console.log(\`Server running on port \${port}\`);
+});`} />
+
                     </div>
 
                     <div className="bg-gray-100 border-l-4 border-red-500 p-4 rounded-lg shadow-lg mb-1">
@@ -101,6 +110,9 @@ app.listen(port, () => {
     res.send('Hello, World!');
 });`}
                         </pre>
+                        <CopyButton text={`app.get('/api', (req, res) => {
+    res.send('Hello, World!');
+});`} />
                     </div>
 
                     <div className="bg-gray-100 border-l-4 border-red-500 p-4 rounded-lg shadow-lg mb-1">
@@ -115,6 +127,11 @@ mongoose.connect('mongodb://localhost:27017/yourDatabaseName', { useNewUrlParser
     .then(() => console.log('MongoDB connected...'))
     .catch(err => console.error(err));`}
                         </pre>
+                        <CopyButton text={`const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/yourDatabaseName', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected...'))
+    .catch(err => console.error(err));`} />
                     </div>
 
                     <div className="bg-gray-100 border-l-4 border-red-500 p-4 rounded-lg shadow-lg mb-1">
@@ -132,6 +149,14 @@ mongoose.connect('mongodb://localhost:27017/yourDatabaseName', { useNewUrlParser
 
 const Post = mongoose.model('Post', postSchema);`}
                         </pre>
+                        <CopyButton text={`const postSchema = new mongoose.Schema({
+    title: String,
+    content: String,
+    author: String,
+    date: { type: Date, default: Date.now }
+});
+
+const Post = mongoose.model('Post', postSchema);`} />
                     </div>
                 </div>
             </section>
@@ -151,6 +176,7 @@ const Post = mongoose.model('Post', postSchema);`}
                     <pre className="bg-gray-200 text-green-500 p-4 rounded text-sm sm:text-base md:text-lg overflow-x-auto whitespace-pre-wrap mt-2">
                         {`npx create-react-app myapp`}
                     </pre>
+                    <CopyButton text={`npx create-react-app myapp`} />
                     <p className="text-base sm:text-lg mt-2">
                         Navigate to your app’s directory and start the development server:
                     </p>
@@ -158,6 +184,8 @@ const Post = mongoose.model('Post', postSchema);`}
                         {`cd myapp
 npm start`}
                     </pre>
+                    <CopyButton text={`cd myapp
+npm start`} />
                 </div>
                 <div className="bg-gray-100 border-l-4 border-red-500 p-4 rounded-lg shadow-lg mt-4">
                     <strong className="text-lg sm:text-xl md:text-2xl text-red-600">Create Components</strong>

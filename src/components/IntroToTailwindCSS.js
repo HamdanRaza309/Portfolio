@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Img from '../assets/images/blog4.jpg'
+import CopyButton from './CopyButton';
 
 const IntroToTailwindCSS = () => {
 
@@ -53,6 +54,8 @@ const IntroToTailwindCSS = () => {
                             {`npm install tailwindcss
 npx tailwindcss init`}
                         </pre>
+                        <CopyButton text={`npm install tailwindcss
+npx tailwindcss init`} />
                     </div>
                     <div className="bg-gray-100 border-l-4 border-red-500 p-4 rounded-lg shadow-lg">
                         <strong className='text-red-600'>Configure TailwindCSS:</strong>
@@ -66,6 +69,13 @@ npx tailwindcss init`}
   plugins: [],
 }`}
                         </pre>
+                        <CopyButton text={`module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}`} />
                     </div>
                     <div className="bg-gray-100 border-l-4 border-red-500 p-4 rounded-lg shadow-lg">
                         <strong className='text-red-600'>Add Tailwind to Your CSS:</strong>
@@ -75,6 +85,9 @@ npx tailwindcss init`}
 @tailwind components;
 @tailwind utilities;`}
                         </pre>
+                        <CopyButton text={`@tailwind base;
+@tailwind components;
+@tailwind utilities;`} />
                     </div>
                     <div className="bg-gray-100 border-l-4 border-red-500 p-4 rounded-lg shadow-lg">
                         <strong className='text-red-600'>Build and Use Tailwind:</strong>
@@ -82,6 +95,7 @@ npx tailwindcss init`}
                         <pre className="bg-gray-100 p-4 rounded text-green-500 overflow-auto">
                             {`npx tailwindcss -o build/tailwind.css --watch`}
                         </pre>
+                        <CopyButton text={`npx tailwindcss -o build/tailwind.css --watch`} />
                     </div>
                 </div>
             </section>
@@ -131,10 +145,6 @@ npx tailwindcss init`}
                     </div>
                 </div>
             </section>
-
-            <footer className="py-4 text-center bg-gray-800 text-white rounded-lg">
-                <p>&copy; {new Date().getFullYear()} Hamdan Raza. All rights reserved.</p>
-            </footer>
         </div>
     )
 }

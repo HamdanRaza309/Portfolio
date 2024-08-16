@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Img from '../assets/images/blog3.jpg'
-
+import CopyButton from './CopyButton';
 const OptimizingWebPerformance = () => {
 
     useEffect(() => {
@@ -41,6 +41,11 @@ const OptimizingWebPerformance = () => {
     // Use MyComponent
 });`}
                     </pre>
+                    <CopyButton text={`import('./MyComponent').then(module => {
+    const MyComponent = module.default;
+    // Use MyComponent
+});`} />
+
                 </div>
                 <div className="bg-gray-100 border-l-4 border-red-500 p-4 rounded-lg shadow-lg mt-4">
                     <h3 className="text-xl md:text-2xl font-semibold text-red-600 mb-2">React Lazy and Suspense</h3>
@@ -58,6 +63,15 @@ function App() {
     );
 }`}
                     </pre>
+                    <CopyButton text={`const MyComponent = React.lazy(() => import('./MyComponent'));
+
+function App() {
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <MyComponent />
+        </React.Suspense>
+    );
+}`} />
                 </div>
             </section>
 
@@ -74,6 +88,7 @@ function App() {
                     <pre className="bg-gray-200 p-4 rounded-lg overflow-x-auto text-green-500 text-sm md:text-base">
                         {`<img src="image.jpg" alt="Example" loading="lazy" />`}
                     </pre>
+                    <CopyButton text={`<img src="image.jpg" alt="Example" loading="lazy" />`} />
                 </div>
                 <div className="bg-gray-100 border-l-4 border-red-500 p-4 rounded-lg shadow-lg mt-4">
                     <h3 className="text-xl md:text-2xl font-semibold text-red-600 mb-2">Lazy Loading Components</h3>
@@ -91,6 +106,16 @@ function App() {
     );
 }`}
                     </pre>
+                    <CopyButton text={`const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+function App() {
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <LazyComponent />
+        </React.Suspense>
+    );
+}`} />
+
                 </div>
             </section>
 
@@ -126,6 +151,20 @@ function App() {
     background-position: -50px 0;
 }`}
                     </pre>
+                    <CopyButton text={`.icon {
+    background-image: url('sprite.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.icon-1 {
+    background-position: 0 0;
+}
+
+.icon-2 {
+    background-position: -50px 0;
+}`} />
                 </div>
                 <div className="bg-gray-100 border-l-4 border-red-500 p-4 rounded-lg shadow-lg mt-4">
                     <h3 className="text-xl md:text-2xl font-semibold text-red-600 mb-2">Reduce Third-Party Requests</h3>
@@ -154,6 +193,7 @@ function App() {
                     <pre className="bg-gray-200 p-4 rounded-lg overflow-x-auto text-green-500 text-sm md:text-base">
                         {`<img src="image.webp" alt="Example" />`}
                     </pre>
+                    <CopyButton text={`<img src="image.webp" alt="Example" />`} />
                 </div>
             </section>
         </div>
