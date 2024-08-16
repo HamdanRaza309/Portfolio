@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
@@ -19,9 +19,15 @@ import ResponsiveDesign from "./components/ResponsiveDesign";
 import OptimizingWebPerformance from "./components/OptimizingWebPerformance";
 import IntroToTailwindCSS from "./components/IntroToTailwindCSS";
 import Alert from './components/Alert';
+import Comment from "./components/Comment";
+import useNode from "./hooks/useNode";
+
+const comments = {
+  id: 1,
+  items: [],
+};
 
 function App() {
-
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type) => {
@@ -71,6 +77,26 @@ function App() {
     };
 
     requestAnimationFrame(animateScroll);
+  };
+
+  const [commentsData, setCommentsData] = useState(comments);
+
+  const { insertNode, editNode, deleteNode } = useNode();
+
+  const handleInsertNode = (folderId, item) => {
+    const finalStructure = insertNode(commentsData, folderId, item);
+    setCommentsData(finalStructure);
+  };
+
+  const handleEditNode = (folderId, value) => {
+    const finalStructure = editNode(commentsData, folderId, value);
+    setCommentsData(finalStructure);
+  };
+
+  const handleDeleteNode = (folderId) => {
+    const finalStructure = deleteNode(commentsData, folderId);
+    const temp = { ...finalStructure };
+    setCommentsData(temp);
   };
 
   return (
@@ -124,10 +150,50 @@ function App() {
                 <div ref={contactRef}><Contact showAlert={showAlert} /></div>
               </>
             } />
-            <Route path="/ScalableWebApp" element={<ScalableWebApp />} />
-            <Route path="/ResponsiveDesign" element={<ResponsiveDesign />} />
-            <Route path="/OptimizingWebPerformance" element={<OptimizingWebPerformance />} />
-            <Route path="/IntroToTailwindCSS" element={<IntroToTailwindCSS />} />
+            <Route path="/ScalableWebApp" element={
+              <>
+                <ScalableWebApp />
+                <Comment
+                  handleInsertNode={handleInsertNode}
+                  handleEditNode={handleEditNode}
+                  handleDeleteNode={handleDeleteNode}
+                  comment={commentsData}
+                />
+              </>
+            } />
+            <Route path="/ResponsiveDesign" element={
+              <>
+                <ResponsiveDesign />
+                <Comment
+                  handleInsertNode={handleInsertNode}
+                  handleEditNode={handleEditNode}
+                  handleDeleteNode={handleDeleteNode}
+                  comment={commentsData}
+                />
+              </>
+            } />
+            <Route path="/OptimizingWebPerformance" element={
+              <>
+                <OptimizingWebPerformance />
+                <Comment
+                  handleInsertNode={handleInsertNode}
+                  handleEditNode={handleEditNode}
+                  handleDeleteNode={handleDeleteNode}
+                  comment={commentsData}
+                />
+              </>
+            } />
+            <Route path="/IntroToTailwindCSS" element={
+              <>
+                <IntroToTailwindCSS />
+                <Comment
+                  handleInsertNode={handleInsertNode}
+                  handleEditNode={handleEditNode}
+                  handleDeleteNode={handleDeleteNode}
+                  comment={commentsData}
+                />
+              </>
+            } />
           </Routes>
         </div>
         <Footer />
