@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Img from '../assets/images/Hamdan2.jpg';
+import Img from '../assets/images/Hamdan1.png';
 import { useInView } from 'react-intersection-observer';
 import emailjs from '@emailjs/browser';
 
@@ -57,13 +57,13 @@ export default function ContactForm(props) {
         <section
             ref={contactRef}
             id="contact"
-            className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 flex flex-col-reverse lg:flex-row gap-10 items-center bg-red-600 text-white ${contactAnimationRun ? 'animate-fade-in' : ''}`}
+            className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 flex flex-col-reverse lg:flex-row gap-10 bg-red-600 text-white ${contactAnimationRun ? 'animate-fade-in' : ''}`}
         >
             <div className="flex-1 max-w-lg lg:max-w-3xl mx-auto px-5 py-5">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3">
-                    Let's <span className="text-red-6">Talk</span>
+                <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3">
+                    Let's Talk
                 </h2>
-                <p className="text-sm sm:text-sm md:text-md lg:text-md text-center lg:text-left mb-3 lg:mb-4 dark:text-gray-300">
+                <p className="text-sm sm:text-sm md:text-md lg:text-md text-center lg:text-left mb-3 lg:mb-4 text-gray-200">
                     Have a project in mind or just want to say hello? I’d love to hear from you! Whether you have a question, need some advice, or want to collaborate on an exciting project, feel free to drop me a message. Your ideas and feedback are always welcome, and I'm here to help bring your vision to life.
                 </p>
                 <form
@@ -169,7 +169,7 @@ export default function ContactForm(props) {
                             value={formData.message}
                             onChange={handleChange}
                             className="border border-gray-700 bg-gray-800 p-3 h-32 focus:outline-none focus:ring-2 focus:ring-white"
-                            placeholder="Tell us about your Project..."
+                            placeholder="Hi Hamdan, can you help me with..."
                             aria-label="Project Overview"
                         ></textarea>
                     </div>
@@ -182,7 +182,7 @@ export default function ContactForm(props) {
                     </button>
                 </form>
             </div>
-            <div className="flex-1 flex items-center justify-center lg:justify-end">
+            <div className="flex-1 flex  justify-end lg:justify-end">
                 <img src={Img} alt="Contact" className="w-full h-auto lg:w-full lg:h-auto object-cover" />
             </div>
         </section>

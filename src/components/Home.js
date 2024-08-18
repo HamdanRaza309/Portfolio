@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import profile from '../assets/images/profileImg.png';
+import Hamdan from '../assets/images/Hamdan.png'
 import bgImage from '../assets/images/blob-scatter-haikei.svg';
 
 const roles = ["HTML5 & CSS3", "JavaScript (ES6+)", "React.js", "Node.js", "Express.js", "MongoDB"];
@@ -48,8 +49,8 @@ const Home = (props) => {
             <div className="container mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8 relative">
                 <div className="flex flex-col md:w-1/2 space-y-4 text-center md:text-left">
                     <div className="inline-flex items-center animate-zoom-in">
-                        <img src={profile} alt="Profile" className="w-16 h-16 sm:w-20 sm:h-20 mr-1 rounded-full" />
-                        <span className="ml-4 text-lg sm:text-xl bg-white text-black p-2 sm:p-4 rounded-3xl mx-auto md:mx-0">Hello friend!</span>
+                        <img src={profile} alt="Profile" className="w-14 h-14 sm:w-14 sm:h-14 mr-1 rounded-full" />
+                        <span className="ml-4 text-lg sm:text-xl bg-white text-black py-1 px-2 sm:px-4 sm:py-2 rounded-3xl mx-auto md:mx-0">Hello friend!</span>
                     </div>
                     <h3 className="text-2xl sm:text-3xl animate-zoom-in">I'm </h3>
                     <h1 className="animate-zoom-in text-4xl sm:text-5xl font-extrabold">Hamdan Raza</h1>
@@ -64,12 +65,12 @@ const Home = (props) => {
                             Download Resume
                         </button>
                         <button className="btnForRedBg" onClick={() => { props.handleScroll(props.refs.contactRef) }}>
-                            Contact Me
+                            Let's Talk
                         </button>
                     </div>
                 </div>
                 <div className="md:w-1/2 flex justify-center md:justify-end relative animate-zoom-in">
-                    <img src={profile} alt="DP" className="w-64 h-64 sm:w-80 sm:h-80 md:w-full relative" />
+                    <img src={Hamdan} alt="DP" className="w-64 h-auto sm:w-80 sm:h-auto md:w-auto relative transform scale-x-[-1]" />
                 </div>
             </div>
         </div>
