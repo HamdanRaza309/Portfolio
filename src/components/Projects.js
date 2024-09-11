@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faMinus, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { useInView } from "react-intersection-observer";
 
 
@@ -9,7 +9,7 @@ const initialProjects = [
     {
         type: "React",
         title: "SparkPress-Latest News",
-        description: "A brief description of Project One.",
+        description: "A dynamic news application built with React that showcases the latest headlines and articles. Features include real-time updates and an intuitive user interface.",
         image: require('../assets/images/SparkPress.png'),
         liveDemo: "#",
         github: "https://github.com/HamdanRaza309/SparkPress.git",
@@ -17,7 +17,7 @@ const initialProjects = [
     {
         type: "Javascript",
         title: "Snake Game-Kids",
-        description: "A brief description of Project Two.",
+        description: "A fun and interactive Snake game designed for kids using vanilla JavaScript. Enjoyable and easy-to-learn gameplay with simple controls.",
         image: require('../assets/images/Snake Game.png'),
         liveDemo: "#",
         github: "#",
@@ -25,16 +25,15 @@ const initialProjects = [
     {
         type: "Javascript",
         title: "Pdf Merger",
-        description: "A brief description of Project One.",
+        description: "A tool for merging multiple PDF files into a single document. Developed using JavaScript, it simplifies the process of managing and combining PDFs.",
         image: require('../assets/images/Pdf Merger.png'),
-
         liveDemo: "#",
         github: "#",
     },
     {
         type: "Javascript",
         title: "Analogue Clock",
-        description: "A brief description of Project One.",
+        description: "A classic analogue clock built with JavaScript, displaying current time with real-time updates. Includes a stylish design and accurate timekeeping.",
         image: require('../assets/images/Analogue CLock.png'),
         liveDemo: "#",
         github: "#",
@@ -42,7 +41,7 @@ const initialProjects = [
     {
         type: "Mern Stack",
         title: "Shopingoo-eCommerce",
-        description: "A brief description of Project Two.",
+        description: "An e-commerce platform developed with the MERN stack. Features product listings, shopping cart, and secure checkout functionalities. A comprehensive solution for online shopping.",
         image: require('../assets/images/Shopingoo.png'),
         liveDemo: "#",
         github: "https://github.com/HamdanRaza309/22PWBCS0926-WP-ASSIGNMENT-04.git",
@@ -50,7 +49,7 @@ const initialProjects = [
     {
         type: "Mern Stack",
         title: "LogBook-Cloud Storage",
-        description: "A brief description of Project One.",
+        description: "A cloud-based note-taking application using the MERN stack. Allows users to securely store and manage their notes with authentication and cloud storage capabilities.",
         image: require('../assets/images/LogBook.png'),
         liveDemo: "#",
         github: "https://github.com/HamdanRaza309/logbook.git",
@@ -58,11 +57,42 @@ const initialProjects = [
     {
         type: "React",
         title: "IronEdge-Gym",
-        description: "A brief description of Project Two.",
+        description: "A comprehensive gym management application built with React. Features include membership management, class schedules, and user profiles for a seamless gym experience.",
         image: require('../assets/images/IronEgde.png'),
-
         liveDemo: "#",
         github: "https://github.com/HamdanRaza309/IronEdge-FitnessGym-UsingAPI.git",
+    },
+    {
+        type: "React",
+        title: "Quiz-App",
+        description: "An interactive quiz application created with React. Users can test their knowledge on various topics with a responsive design and engaging interface.",
+        image: require('../assets/images/QuizApp.png'),
+        liveDemo: "#",
+        github: "https://github.com/HamdanRaza309/Quiz-App.git",
+    },
+    {
+        type: "Mern Stack",
+        title: "Fashion Closet-eCommerce",
+        description: "An online fashion store developed using the MERN stack. Features include product browsing, user accounts, and a stylish design for a modern shopping experience.",
+        image: require('../assets/images/fashionCloset.png'),
+        liveDemo: `https://fashion-closet.vercel.app/`,
+        github: "https://github.com/HamdanRaza309/fashion-closet.git",
+    },
+    {
+        type: "React",
+        title: "React-CRUD",
+        description: "A CRUD (Create, Read, Update, Delete) application built with React. Allows users to manage data entries with a user-friendly interface and efficient data handling.",
+        image: require('../assets/images/ReactCRUD.png'),
+        liveDemo: "#",
+        github: "https://github.com/HamdanRaza309/React-CRUD.git",
+    },
+    {
+        type: "API",
+        title: "Handling API-Professionally",
+        description: "A project demonstrating advanced techniques for handling APIs. Includes practices for making API calls, managing responses, and integrating with various services.",
+        image: require('../assets/images/API.png'),
+        liveDemo: "#",
+        github: "https://github.com/HamdanRaza309/Handling-API-Professionally.git",
     },
 ];
 
@@ -70,6 +100,8 @@ const Projects = () => {
     const [projects, setProjects] = useState(initialProjects);
     const [selectedImage, setSelectedImage] = useState(null);
     const [githubLink, setGithubLink] = useState(null);
+    const [description, setDescription] = useState(null);
+    const [liveDemo, setLiveDemo] = useState(null);
     const { ref: projectsRef, inView: projectsVisible } = useInView();
     const [mainHeadingsAnimationRun, setMainHeadingsAnimationRun] = useState(false);
     const [projectsAnimationRun, setProjectsAnimationRun] = useState(false);
@@ -90,14 +122,18 @@ const Projects = () => {
 
 
     // Open Project's Image or Redirect to Github
-    const handleImgClick = ([image, github]) => {
+    const handleImgClick = ([image, github, liveDemo, description]) => {
         setSelectedImage(image);
-        setGithubLink(github)
+        setGithubLink(github);
+        setLiveDemo(liveDemo);
+        setDescription(description)
     };
 
     const handleCloseModal = () => {
         setSelectedImage(null);
         setGithubLink(null);
+        setLiveDemo(null);
+        setDescription(null);
     };
 
     // Displaying Projects By Type
@@ -118,6 +154,12 @@ const Projects = () => {
     const showMernStack = () => {
         setProjects(
             initialProjects.filter((project) => project.type === "Mern Stack")
+        );
+    };
+
+    const showAPI = () => {
+        setProjects(
+            initialProjects.filter((project) => project.type === "API")
         );
     };
 
@@ -147,6 +189,10 @@ const Projects = () => {
                 <button onClick={showMernStack} className="btnForWhiteBg mx-1 my-1">
                     Mern Stack
                 </button>
+                <button onClick={showAPI} className="btnForWhiteBg mx-1 my-1">
+                    API
+                </button>
+
             </div>
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -164,7 +210,7 @@ const Projects = () => {
                                 <h3 className="text-lg font-semibold ml-3">{project.title}</h3>
                                 <button
                                     className="btnForWhiteBg p-2 m-1 text-xl"
-                                    onClick={() => handleImgClick([project.image, project.github])}
+                                    onClick={() => handleImgClick([project.image, project.github, project.liveDemo, project.description])}
                                 >
                                     <FontAwesomeIcon icon={faPlus} />
                                 </button>
@@ -174,27 +220,37 @@ const Projects = () => {
                 </div>
             </div>
 
-            {/* Modal */}
             {selectedImage && (
-                <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-                    <div className="bg-white rounded-sm max-w-lg relative">
+                <div className="fixed inset-0 bg-gradient-to-r from-gray-800 via-gray-900 to-black flex items-center justify-center z-50">
+                    <div className="bg-white rounded-lg shadow-lg max-w-4xl mx-4 md:mx-0 relative p-6 md:p-8">
                         <button
-                            className="absolute top-0 right-0 btnForWhiteBg text-lg text-gray-600 hover:text-gray-900"
+                            className="btnForWhiteBg absolute top-0 right-0"
                             onClick={handleCloseModal}
                         >
-                            <FontAwesomeIcon icon={faMinus} />
+                            <FontAwesomeIcon icon={faMinus} className="text-xl" />
                         </button>
-                        <Link
-                            className="absolute top-0 left-0 btnForWhiteBg text-lg text-gray-600 hover:text-gray-900"
-                            to={githubLink}
-                            target="_blank"
-                        >
-                            Github
-                        </Link>
+                        <div className="flex flex-col gap-10 md:flex-row justify-between items-start md:items-center mb-4 absolute top-2">
+                            <Link
+                                className="text-gray-600 hover:text-blue-500 transition-colors duration-200 mb-2 md:mb-0 flex items-center underline"
+                                to={liveDemo}
+                                target="_blank"
+                            >
+                                <FontAwesomeIcon icon={faPlay} className="mr-2" /> Live Demo
+                            </Link>
+                            <Link
+                                className="text-gray-600 hover:text-blue-500 transition-colors duration-200 flex items-center underline"
+                                to={githubLink}
+                                target="_blank"
+                            >
+                                {/* <FontAwesomeIcon icon={faGithub} className="mr-2" /> */}
+                                Github
+                            </Link>
+                        </div>
+                        <p className="mb-4 text-gray-700">{description}</p>
                         <img
                             src={selectedImage}
                             alt="Selected"
-                            className="max-w-full h-auto"
+                            className="w-full h-auto rounded-lg shadow-md"
                         />
                     </div>
                 </div>

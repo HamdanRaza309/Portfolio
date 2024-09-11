@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import Logo from '../assets/images/logo.png';
+import Logo from '../assets/images/logo1.png';
 
 const Navbar = ({ handleScroll, refs }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -64,7 +64,7 @@ const Navbar = ({ handleScroll, refs }) => {
         <nav className={`${bgColor} ${textColor} ${height} sticky w-full z-10 top-0 shadow-md transition-all duration-500`}>
             <div className="container mx-auto px-4 py-2 flex justify-between items-center h-full max-w-full sm:max-w-screen-md md:max-w-screen-lg">
                 <div className="text-xl md:text-2xl font-bold">
-                    <img className='h-16 w-28' src={Logo} alt="Logo" />
+                    <img className='h-32 w-52' src={Logo} alt="Logo" />
                 </div>
                 <div className="hidden md:flex space-x-4 items-center h-full">
                     <Link to='/' onClick={goToTop} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Home</Link>

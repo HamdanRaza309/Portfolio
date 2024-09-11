@@ -75,7 +75,7 @@ const Footer = () => {
                         <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
                             <div className="flex justify-center lg:justify-start items-center mb-4">
                                 {/* <div className="text-4xl font-bold">Hamdan Raza</div> */}
-                                <img className='h-20 w-28' src={Logo} alt="Logo" />
+                                <img className='h-40 w-60' src={Logo} alt="Logo" />
                             </div>
                             <p className="text-gray-400 mb-6">
                                 Crafting innovative solutions and creating elegant experiences. Let's build something amazing together.
