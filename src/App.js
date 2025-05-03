@@ -21,6 +21,7 @@ import IntroToTailwindCSS from "./components/IntroToTailwindCSS";
 import Alert from './components/Alert';
 import Comment from "./components/Comment";
 import useNode from "./hooks/useNode";
+import Skills from './components/Skills';
 
 const comments = {
   id: 1,
@@ -120,6 +121,7 @@ function App() {
               <>
                 <Home handleScroll={handleScroll} refs={{ contactRef }} />
                 <div ref={aboutRef}><About handleScroll={handleScroll} refs={{ projectsRef }} /></div>
+                <div><Skills /></div>
                 <div ref={servicesRef}><Services /></div>
                 <div>
                   <Banner

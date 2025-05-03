@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'; // Updated import for GitHub and LinkedIn
 import Logo from '../assets/images/logo1.png';
 
 const Navbar = ({ handleScroll, refs }) => {
@@ -55,7 +56,7 @@ const Navbar = ({ handleScroll, refs }) => {
         };
 
         scroll();
-    }
+    };
 
     // Determine if only the Home link should be shown
     const showOnlyHome = ['/ScalableWebApp', '/ResponsiveDesign', '/OptimizingWebPerformance', '/IntroToTailwindCSS'].includes(location.pathname);
@@ -64,23 +65,40 @@ const Navbar = ({ handleScroll, refs }) => {
         <nav className={`${bgColor} ${textColor} ${height} sticky w-full z-10 top-0 shadow-md transition-all duration-500`}>
             <div className="container mx-auto px-4 py-2 flex justify-between items-center h-full max-w-full sm:max-w-screen-md md:max-w-screen-lg">
                 <div className="text-xl md:text-2xl font-bold">
-                    <img className='h-32 w-52' src={Logo} alt="Logo" />
+                    <img className="h-32 w-52" src={Logo} alt="Logo" />
                 </div>
                 <div className="hidden md:flex space-x-4 items-center h-full">
-                    <Link to='/' onClick={goToTop} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Home</Link>
+                    <Link to="/" onClick={goToTop} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Home</Link>
                     {!showOnlyHome && (
                         <>
-                            <Link to='' onClick={() => handleScroll(refs.aboutRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>About</Link>
-                            <Link to='' onClick={() => handleScroll(refs.servicesRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Services</Link>
-                            <Link to='' onClick={() => handleScroll(refs.experienceRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Experience</Link>
-                            <Link to='' onClick={() => handleScroll(refs.projectsRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Projects</Link>
-                            <Link to='' onClick={() => handleScroll(refs.pricePlanRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Pricing</Link>
-                            <Link to='' onClick={() => handleScroll(refs.teamRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Team</Link>
-                            <Link to='' onClick={() => handleScroll(refs.customersRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Review</Link>
-                            <Link to='' onClick={() => handleScroll(refs.blogRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Blog</Link>
-                            <Link to='' onClick={() => handleScroll(refs.contactRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Contact</Link>
+                            <Link to="" onClick={() => handleScroll(refs.aboutRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>About</Link>
+                            <Link to="" onClick={() => handleScroll(refs.servicesRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Services</Link>
+                            <Link to="" onClick={() => handleScroll(refs.experienceRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Experience</Link>
+                            <Link to="" onClick={() => handleScroll(refs.projectsRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Projects</Link>
+                            <Link to="" onClick={() => handleScroll(refs.pricePlanRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Pricing</Link>
+                            <Link to="" onClick={() => handleScroll(refs.teamRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Team</Link>
+                            <Link to="" onClick={() => handleScroll(refs.customersRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Review</Link>
+                            <Link to="" onClick={() => handleScroll(refs.blogRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Blog</Link>
+                            <Link to="" onClick={() => handleScroll(refs.contactRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Contact</Link>
                         </>
                     )}
+                    {/* LinkedIn and GitHub icons */}
+                    <a
+                        href="https://github.com/HamdanRaza309/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`text-xl ${hoverTextColor}`}
+                    >
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/hamdanraza/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`text-xl ${hoverTextColor}`}
+                    >
+                        <FontAwesomeIcon icon={faLinkedin} />
+                    </a>
                 </div>
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="focus:outline-none text-xl">
@@ -91,20 +109,39 @@ const Navbar = ({ handleScroll, refs }) => {
             {isOpen && (
                 <div className="md:hidden bg-gray-800 text-white">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <Link to='/' onClick={goToTop} className={`block text-sm font-bold ${hoverTextColor}`}>Home</Link>
+                        <Link to="/" onClick={goToTop} className={`block text-sm font-bold ${hoverTextColor}`}>Home</Link>
                         {!showOnlyHome && (
                             <>
-                                <Link to='/' onClick={() => handleScroll(refs.aboutRef)} className={`block text-sm font-bold ${hoverTextColor}`}>About</Link>
-                                <Link to='/' onClick={() => handleScroll(refs.servicesRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Services</Link>
-                                <Link to='/' onClick={() => handleScroll(refs.experienceRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Experience</Link>
-                                <Link to='/' onClick={() => handleScroll(refs.projectsRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Projects</Link>
-                                <Link to='/' onClick={() => handleScroll(refs.pricePlanRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Pricing</Link>
-                                <Link to='/' onClick={() => handleScroll(refs.teamRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Team</Link>
-                                <Link to='/' onClick={() => handleScroll(refs.customersRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Review</Link>
-                                <Link to='/' onClick={() => handleScroll(refs.blogRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Blog</Link>
-                                <Link to='/' onClick={() => handleScroll(refs.contactRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Contact</Link>
+                                <Link to="/" onClick={() => handleScroll(refs.aboutRef)} className={`block text-sm font-bold ${hoverTextColor}`}>About</Link>
+                                <Link to="/" onClick={() => handleScroll(refs.servicesRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Services</Link>
+                                <Link to="/" onClick={() => handleScroll(refs.experienceRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Experience</Link>
+                                <Link to="/" onClick={() => handleScroll(refs.projectsRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Projects</Link>
+                                <Link to="/" onClick={() => handleScroll(refs.pricePlanRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Pricing</Link>
+                                <Link to="/" onClick={() => handleScroll(refs.teamRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Team</Link>
+                                <Link to="/" onClick={() => handleScroll(refs.customersRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Review</Link>
+                                <Link to="/" onClick={() => handleScroll(refs.blogRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Blog</Link>
+                                <Link to="/" onClick={() => handleScroll(refs.contactRef)} className={`block text-sm font-bold ${hoverTextColor}`}>Contact</Link>
                             </>
                         )}
+                        {/* Mobile version LinkedIn and GitHub icons */}
+                        <div className="flex justify-center gap-6 py-4">
+                            <a
+                                href="https://github.com/your-github-username"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`text-xl ${hoverTextColor}`}
+                            >
+                                <FontAwesomeIcon icon={faGithub} />
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/your-linkedin-username"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`text-xl ${hoverTextColor}`}
+                            >
+                                <FontAwesomeIcon icon={faLinkedin} />
+                            </a>
+                        </div>
                     </div>
                 </div>
             )}
