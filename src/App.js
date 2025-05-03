@@ -123,31 +123,34 @@ function App() {
                 <div ref={aboutRef}><About handleScroll={handleScroll} refs={{ projectsRef }} /></div>
                 <div><Skills /></div>
                 <div ref={servicesRef}><Services /></div>
-                <div>
-                  <Banner
-                    handleScroll={handleScroll}
-                    refs={{ teamRef }}
-                    sideHeading={'Welcome to My Creative Space'}
-                    heading={<span>Turning <span className="text-black">Ideas</span><span> into Digital Art.</span></span>}
-                    desc={`Welcome to my digital playground, where creativity meets technology. I'm Hamdan Raza, a developer dedicated to weaving together design and code to craft unforgettable digital experiences. My mission is to transform innovative concepts into stunning, functional solutions that captivate and engage. From designing sleek interfaces to building robust applications, I’m here to make your vision a reality. Ready to embark on a journey of creativity and tech? Let’s create something remarkable together!`}
-                    buttonText={'Meet My Team'}
-                  />
-                </div>
-                <div ref={experienceRef}><Experience /></div>
+                <Banner
+                  handleScroll={handleScroll}
+                  refs={{ contactRef }}
+                  sideHeading={'Empowering Innovation Through Code'}
+                  heading={<span>Engineering <span className="text-black">Digital</span> Excellence</span>}
+                  desc={
+                    'With a strong foundation in full-stack development, I specialize in crafting efficient, scalable, and user-focused web solutions. From pixel-perfect frontends to powerful backends, every line of code is a step toward innovation. I believe in solving real-world problems through technology, transforming abstract ideas into high-performing digital products. Let’s build something that’s not only functional, but unforgettable.'
+                  }
+                  buttonText={'Lets Connect'}
+                />
+                {/* <div ref={experienceRef}><Experience /></div> */}
                 <div ref={projectsRef}><Projects /></div>
-                <div>
-                  <Banner
-                    handleScroll={handleScroll}
-                    refs={{ teamRef }}
-                    sideHeading={'Transforming Ideas into Reality'}
-                    heading={<span>Crafting<span className="text-black"> Code </span>with Creativity</span>}
-                    desc={'Passionate about developing immersive and engaging experiences, I seamlessly blend design with functionality to create impactful digital solutions. With a keen eye for detail and a love for innovation, I strive to push the boundaries of what’s possible and bring unique visions to life. Whether it’s building dynamic web applications or crafting intuitive user interfaces, my goal is to deliver exceptional results that make a difference. Let’s collaborate and build something extraordinary together!'}
-                    buttonText={'Meet My Team'}
-                  />
-                </div>
-                <div ref={pricePlanRef}><PricePlan /></div>
-                <div ref={teamRef}><Team /></div>
-                <div ref={customersRef}><Customers /></div>
+                <Banner
+                  handleScroll={handleScroll}
+                  refs={{ contactRef }}
+                  sideHeading={'A Journey of Code and Creativity'}
+                  heading={
+                    <span>Designing <span className="text-black">Impactful</span> Experiences</span>
+                  }
+                  desc={
+                    `Hi, I'm Hamdan Raza — a creative developer passionate about bringing ideas to life through thoughtful design and purposeful code. This space is more than just a portfolio; it’s a reflection of my approach to digital storytelling. Whether you're a startup, a brand, or a fellow creative, I’m here to turn your concepts into elegant, user-centric digital experiences. Let's collaborate and turn bold ideas into reality.`
+                  }
+                  buttonText={'Lets Connect'}
+                />
+
+                {/* <div ref={pricePlanRef}><PricePlan /></div> */}
+                {/* <div ref={teamRef}><Team /></div> */}
+                {/* <div ref={customersRef}><Customers /></div> */}
                 <div ref={blogRef}><Blog /></div>
                 <div ref={contactRef}><Contact showAlert={showAlert} /></div>
               </>

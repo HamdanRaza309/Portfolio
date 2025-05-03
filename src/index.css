@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 body {
   overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -18,18 +18,18 @@ body {
   font-weight: 600;
   letter-spacing: 1px;
   color: #ffffff;
-  background: #EF233C;
+  background: #ef233c;
   border: 2px solid transparent;
   border-radius: 0;
-  box-shadow: inset 0 0 0 50px #EF233C;
+  box-shadow: inset 0 0 0 50px #ef233c;
   transition: ease-in 0.3s;
 }
 
 .btnForWhiteBg:hover {
-  color: #EF233C;
+  color: #ef233c;
   background: transparent;
-  box-shadow: inset 0 0 0 0 #EF233C;
-  border-color: #EF233C;
+  box-shadow: inset 0 0 0 0 #ef233c;
+  border-color: #ef233c;
 }
 
 .btnForRedBg {
@@ -37,8 +37,8 @@ body {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #EF233C;
-  background: #ffffff ;
+  color: #ef233c;
+  background: #ffffff;
   border: 2px solid transparent;
   border-radius: 0;
   box-shadow: inset 0 0 0 50px #ffffff;
@@ -58,7 +58,7 @@ body {
     transform: translateY(100px);
   }
   50% {
-    opacity: .5;
+    opacity: 0.5;
     transform: translateY(90px);
   }
   100% {
@@ -68,7 +68,7 @@ body {
 }
 
 .animate-fade-in {
-  animation: fade-in .7s ease-in;
+  animation: fade-in 0.3s ease-in;
 }
 
 @keyframes zoom-in {
@@ -83,7 +83,7 @@ body {
 }
 
 .animate-zoom-in {
-  animation: zoom-in .7s ease-in;
+  animation: zoom-in 0.5s ease-in;
 }
 
 @keyframes slide-in-left {
@@ -102,7 +102,7 @@ body {
 }
 
 .animate-slide-in-left {
-  animation: slide-in-left 1.5s ease-in;
+  animation: slide-in-left 0.8s ease-in;
 }
 
 @keyframes slide-in-right {
@@ -121,7 +121,7 @@ body {
 }
 
 .animate-slide-in-right {
-  animation: slide-in-right 1.5s ease-in;
+  animation: slide-in-right 0.6s ease-in;
 }
 
 @keyframes progressBarFill95 {
@@ -161,19 +161,19 @@ body {
 }
 
 .animate-progress-95 {
-  animation: progressBarFill95 2s forwards;
+  animation: progressBarFill95 1.5s forwards;
 }
 
 .animate-progress-70 {
-  animation: progressBarFill70 2s forwards;
+  animation: progressBarFill70 1.5s forwards;
 }
 
 .animate-progress-80 {
-  animation: progressBarFill80 2s forwards;
+  animation: progressBarFill80 1.5s forwards;
 }
 
 .animate-progress-75 {
-  animation: progressBarFill75 2s forwards;
+  animation: progressBarFill75 1.5s forwards;
 }
 
 .rocket {
@@ -181,7 +181,7 @@ body {
 }
 
 .animateRocket {
-  animation-duration: 5s;
+  animation-duration: 4s;
   animation-name: animate-rocket;
 }
 
@@ -274,7 +274,7 @@ body {
   38% {
     transform: translateX(-310px) scale(2.8) rotate(-9deg);
   }
-  
+
   42% {
     transform: translateX(-290px) scale(3) rotate(-9deg);
   }
@@ -284,7 +284,7 @@ body {
   44% {
     transform: translateX(-280px) scale(3) rotate(-8deg);
   }
-  
+
   47% {
     transform: translateX(-265px) scale(3.5) rotate(-6.5deg);
   }
@@ -292,7 +292,8 @@ body {
     transform: translateX(-260px) scale(3.5) rotate(5deg);
   }
   100% {
-    transform: translateX(300px) scale(3.5) translate3D(100vw, -100vh, 0) rotate(5deg);
+    transform: translateX(300px) scale(3.5) translate3D(100vw, -100vh, 0)
+      rotate(5deg);
   }
 }
 
@@ -301,7 +302,7 @@ body {
     background-color: transparent;
   }
   to {
-    background-color: #dc2626; 
+    background-color: #dc2626;
   }
 }
 

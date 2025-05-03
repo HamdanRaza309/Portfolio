@@ -112,10 +112,9 @@ const Footer = () => {
                                 <h3 className="text-lg font-semibold mb-4">SERVICES</h3>
                                 <ul className="text-gray-400 space-y-2">
                                     <li><Link to="#" className="hover:text-white">Web Development</Link></li>
-                                    <li><Link to="#" className="hover:text-white">UI/UX Design</Link></li>
-                                    <li><Link to="#" className="hover:text-white">SEO Optimization</Link></li>
-                                    <li><Link to="#" className="hover:text-white">API Development</Link></li>
-                                    <li><Link to="#" className="hover:text-white">SEO Optimization</Link></li>
+                                    <li><Link to="#" className="hover:text-white">Web Hosting Setup</Link></li>
+                                    <li><Link to="#" className="hover:text-white">API Integration</Link></li>
+                                    <li><Link to="#" className="hover:text-white">Web Maintenance and Support</Link></li>
                                 </ul>
                             </div>
                         </div>

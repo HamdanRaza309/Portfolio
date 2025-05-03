@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { faLaptopCode, faCode, faCogs, faDesktop } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faWrench, faPlug, faServer, faShoppingCart, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useInView } from 'react-intersection-observer';
 
 const Services = () => {
     const services = [
-        { name: 'Web Design', description: 'Creating visually appealing and user-friendly web designs.', icon: faDesktop },
-        { name: 'Full-Stack Development', description: 'Building complete web applications from front to back.', icon: faLaptopCode },
-        { name: 'API Development', description: 'Designing and integrating RESTful APIs for seamless interactions.', icon: faCode },
-        { name: 'Frontend Development', description: 'Developing interactive and responsive user interfaces.', icon: faCogs },
+        { name: 'Web Development', description: 'Developing both frontend and backend solutions for websites and web apps.', icon: faGlobe },
+        { name: 'API Integration', description: 'Integrating third-party APIs to extend functionality and improve services.', icon: faPlug },
+        { name: 'Web Maintenance & Support', description: 'Providing ongoing support, updates, and bug fixes to keep your site running smoothly.', icon: faWrench },
+        { name: 'Web Hosting Setup', description: 'Setting up hosting services and domains for your website or web application.', icon: faServer },
+        { name: 'E-commerce Solutions', description: 'Building and customizing online stores with integrated payment systems.', icon: faShoppingCart },
+        { name: 'Many More', description: 'We offer a wide range of web development services tailored to your needs.', icon: faEllipsisH }
     ];
 
     const [hoveredIndex, setHoveredIndex] = useState(null);
