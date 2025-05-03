@@ -32,18 +32,6 @@ const Home = (props) => {
         };
     }, [displayedText, isDeleting, currentRole]);
 
-    const handleDownloadResume = () => {
-        fetch(`/files/Resume.pdf`).then(res => res.blob()).then(blob => {
-            const blobURL = window.URL.createObjectURL(new Blob([blob]));
-            const aTag = document.createElement('a');
-            aTag.href = blobURL;
-            aTag.setAttribute('download', 'Hamdan Raza Resume.pdf');
-            document.body.appendChild(aTag);
-            aTag.click();
-            aTag.remove();
-        });
-    };
-
     return (
         <div style={{ backgroundImage: `url(${bgImage})`, minHeight: '110vh' }} className="w-full p-6 sm:p-12 md:p-24 flex items-center justify-center text-white overflow-hidden">
             <div className="container mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8 relative">
@@ -58,12 +46,15 @@ const Home = (props) => {
                         <h2 className="text-3xl sm:text-4xl">{displayedText}</h2>
                     </div>
                     <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-6">
-                        <button
-                            onClick={handleDownloadResume}
+                        {/* Resume Button */}
+                        <a
+                            href="https://drive.google.com/file/d/1b09PLu_V_CARXeeC9WnG3TYQG65weDtB/view?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="btnForRedBg"
                         >
-                            Download Resume
-                        </button>
+                            Resume
+                        </a>
                         <button className="btnForRedBg" onClick={() => { props.handleScroll(props.refs.contactRef) }}>
                             Let's Talk
                         </button>
