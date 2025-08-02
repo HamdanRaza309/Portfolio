@@ -16,7 +16,7 @@ import nodejsLogo from '../assets/tech_logo/nodejs.png';
 import expressjsLogo from '../assets/tech_logo/express.png';
 import mysqlLogo from '../assets/tech_logo/mysql.png';
 import mongodbLogo from '../assets/tech_logo/mongodb.png';
-// import firebaseLogo from '../assets/tech_logo/firebase.png';
+import supabaseLogo from '../assets/tech_logo/supabase.png';
 import cLogo from '../assets/tech_logo/c.png';
 import cppLogo from '../assets/tech_logo/cpp.png';
 import javaLogo from '../assets/tech_logo/java.png';
@@ -32,6 +32,7 @@ import mcLogo from '../assets/tech_logo/mc.png';
 import vercelLogo from '../assets/tech_logo/vercel.png';
 import postgreLogo from '../assets/tech_logo/postgre.png';
 // import csharpLogo from '../assets/tech_logo/csharp.png';
+import triformLogo from '../assets/tech_logo/triform.png';
 
 export const SkillsInfo = [
     {
@@ -59,7 +60,7 @@ export const SkillsInfo = [
             { name: 'Express JS', logo: expressjsLogo },
             { name: 'MySQL', logo: mysqlLogo },
             { name: 'MongoDB', logo: mongodbLogo },
-            // { name: 'Firebase', logo: firebaseLogo },
+            { name: 'Supabase', logo: supabaseLogo },
             { name: 'PostgreSQL', logo: postgreLogo },
         ],
     },
@@ -86,6 +87,7 @@ export const SkillsInfo = [
             { name: 'Vercel', logo: vercelLogo },
             // { name: 'Netlify', logo: netlifyLogo },
             // { name: 'Figma', logo: figmaLogo },
+            { name: 'Triform', logo: triformLogo },
         ],
     },
 ];

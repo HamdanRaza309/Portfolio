@@ -3,7 +3,7 @@ import profile from '../assets/images/profileImg.png';
 import Hamdan from '../assets/images/Hamdan.png'
 import bgImage from '../assets/images/blob-scatter-haikei.svg';
 
-const roles = ["HTML5 & CSS3", "JavaScript (ES6+)", "React.js", "Node.js", "Express.js", "MongoDB"];
+const roles = ["HTML5 & CSS3", "JavaScript (ES6+)", "React.js", "Node.js", "Express.js", "MongoDB", "Supabase"];
 
 const Home = (props) => {
     const [currentRole, setCurrentRole] = useState(0);
@@ -43,7 +43,7 @@ const Home = (props) => {
                     <h3 className="text-2xl sm:text-3xl animate-zoom-in">I'm </h3>
                     <h1 className="animate-zoom-in text-4xl sm:text-5xl font-extrabold">Hamdan Raza</h1>
                     <div className="h-16 sm:h-20 animate-zoom-in">
-                        <h2 className="text-3xl sm:text-4xl">{displayedText}</h2>
+                        <span>My Tech Stack includes</span> <h2 className="text-3xl sm:text-4xl">{displayedText}</h2>
                     </div>
                     <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-6">
                         {/* Resume Button */}
