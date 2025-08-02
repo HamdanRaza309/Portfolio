@@ -1,6 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
+const experienceTree = [
+    {
+        position: "right",
+        role: "MERN Stack Web Development Intern",
+        date: "Sept 2024 - Oct 2024",
+        location: "Remote",
+        company: "CodeAlpha",
+        description: "Contributed to the development of web applications using the MERN stack."
+    },
+    {
+        position: "left",
+        role: "Junior Full-Stack Web Developer",
+        date: "July 2025 - Present",
+        location: "Ring Road, Peshawar, KPK",
+        company: "Metasense",
+        description: "Responsible to Develope full-stack web applications integrated with AI features and tools."
+    }
+];
+
+
 export default function Experience() {
 
     const { ref: experienceRef, inView: experienceVisible } = useInView();
@@ -51,37 +71,7 @@ export default function Experience() {
             <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
 
                 {/* Cards */}
-                {[{
-                    position: "right",
-                    role: "Web Developer",
-                    date: "08/11/2022",
-                    location: "Soft Agency, San Francisco, CA",
-                    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus."
-                }, {
-                    position: "left",
-                    role: "Web Developer",
-                    date: "09/02/2023",
-                    location: "Soft Agency, San Francisco, CA",
-                    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus."
-                }, {
-                    position: "right",
-                    role: "Web Developer",
-                    date: "10/05/2023",
-                    location: "Soft Agency, San Francisco, CA",
-                    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus."
-                }, {
-                    position: "left",
-                    role: "Web Developer",
-                    date: "12/08/2023",
-                    location: "Soft Agency, San Francisco, CA",
-                    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus."
-                }, {
-                    position: "right",
-                    role: "Web Developer",
-                    date: "04/01/2024",
-                    location: "Soft Agency, San Francisco, CA",
-                    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus."
-                }].map((card, index) => (
+                {experienceTree.map((card, index) => (
                     <div key={index} className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active ${card.position === "right" ? (cardRightAnimationRun ? 'animate-slide-in-right' : '') : (cardLeftAnimationRun ? 'animate-slide-in-left' : '')}`}>
                         <div className={`flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 ${activeCardIndex === index ? 'group-[.is-active]:bg-red-800' : 'group-[.is-active]:bg-red-600'} text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2`}>
                             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="12" height="10">
@@ -96,6 +86,7 @@ export default function Experience() {
                             <div className="flex items-center justify-between space-x-2 mb-1">
                                 <div className="text-xl">{card.role}</div>
                             </div>
+                            <div className="italic font-bold">@{card.company}</div>
                             <div className="italic">{card.location}</div>
                             <div>{card.description}</div>
                             <time className={`font-caveat font-bold ${activeCardIndex === index ? 'text-white' : 'text-red-600'}`}>{card.date}</time>

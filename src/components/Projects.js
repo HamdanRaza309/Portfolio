@@ -39,17 +39,17 @@ const initialProjects = [
         github: "#",
     },
     {
-        type: "Mern Stack",
-        title: "Shopingoo-eCommerce",
-        description: "An e-commerce platform developed with the MERN stack. Features product listings, shopping cart, and secure checkout functionalities. A comprehensive solution for online shopping.",
-        image: require('../assets/images/Shopingoo.png'),
-        liveDemo: "#",
-        github: "https://github.com/HamdanRaza309/22PWBCS0926-WP-ASSIGNMENT-04.git",
+        type: "Full-Stack",
+        title: "Cozy Craze",
+        description: "An e-commerce platform developed with the Full-Stack. Features product listings, shopping cart, and secure checkout functionalities. A comprehensive solution for online shopping.",
+        image: require('../assets/images/cozyCraze.png'),
+        liveDemo: "https://cozy-craze-frontend.vercel.app/",
+        github: "https://github.com/HamdanRaza309/cozy-craze",
     },
     {
-        type: "Mern Stack",
+        type: "Full-Stack",
         title: "LogBook-Cloud Storage",
-        description: "A cloud-based note-taking application using the MERN stack. Allows users to securely store and manage their notes with authentication and cloud storage capabilities.",
+        description: "A cloud-based note-taking application using the Full-Stack. Allows users to securely store and manage their notes with authentication and cloud storage capabilities.",
         image: require('../assets/images/LogBook.png'),
         liveDemo: "#",
         github: "https://github.com/HamdanRaza309/logbook.git",
@@ -71,14 +71,6 @@ const initialProjects = [
         github: "https://github.com/HamdanRaza309/Quiz-App.git",
     },
     {
-        type: "Mern Stack",
-        title: "Fashion Closet-eCommerce",
-        description: "An online fashion store developed using the MERN stack. Features include product browsing, user accounts, and a stylish design for a modern shopping experience.",
-        image: require('../assets/images/fashionCloset.png'),
-        liveDemo: `https://fashion-closet.vercel.app/`,
-        github: "https://github.com/HamdanRaza309/fashion-closet.git",
-    },
-    {
         type: "React",
         title: "React-CRUD",
         description: "A CRUD (Create, Read, Update, Delete) application built with React. Allows users to manage data entries with a user-friendly interface and efficient data handling.",
@@ -87,11 +79,11 @@ const initialProjects = [
         github: "https://github.com/HamdanRaza309/React-CRUD.git",
     },
     {
-        type: "API",
-        title: "Handling API-Professionally",
-        description: "A project demonstrating advanced techniques for handling APIs. Includes practices for making API calls, managing responses, and integrating with various services.",
-        image: require('../assets/images/API.png'),
-        liveDemo: "#",
+        type: "Full-Stack",
+        title: "Ai Code Reviewer",
+        description: "AI Code Reviewer is a web app that uses Gemini AI to analyze and review code instantly. Users can paste or write code, and the app provides feedback on potential issues, bugs, and best practices — along with suggested improvements.",
+        image: require('../assets/images/AiCodeReviewer.png'),
+        liveDemo: "https://code-reviewer-black.vercel.app/",
         github: "https://github.com/HamdanRaza309/Handling-API-Professionally.git",
     },
 ];
@@ -153,13 +145,7 @@ const Projects = () => {
 
     const showMernStack = () => {
         setProjects(
-            initialProjects.filter((project) => project.type === "Mern Stack")
-        );
-    };
-
-    const showAPI = () => {
-        setProjects(
-            initialProjects.filter((project) => project.type === "API")
+            initialProjects.filter((project) => project.type === "Full-Stack")
         );
     };
 
@@ -187,12 +173,8 @@ const Projects = () => {
                     React
                 </button>
                 <button onClick={showMernStack} className="btnForWhiteBg mx-1 my-1">
-                    Mern Stack
+                    Full-Stack
                 </button>
-                <button onClick={showAPI} className="btnForWhiteBg mx-1 my-1">
-                    API
-                </button>
-
             </div>
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

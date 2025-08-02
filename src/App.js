@@ -133,7 +133,7 @@ function App() {
                   }
                   buttonText={'Lets Connect'}
                 />
-                {/* <div ref={experienceRef}><Experience /></div> */}
+                <div ref={experienceRef}><Experience /></div>
                 <div ref={projectsRef}><Projects /></div>
                 <Banner
                   handleScroll={handleScroll}

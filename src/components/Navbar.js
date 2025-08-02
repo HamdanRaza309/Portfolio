@@ -73,7 +73,7 @@ const Navbar = ({ handleScroll, refs }) => {
                         <>
                             <Link to="" onClick={() => handleScroll(refs.aboutRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>About</Link>
                             <Link to="" onClick={() => handleScroll(refs.servicesRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Services</Link>
-                            {/* <Link to="" onClick={() => handleScroll(refs.experienceRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Experience</Link> */}
+                            <Link to="" onClick={() => handleScroll(refs.experienceRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Experience</Link>
                             <Link to="" onClick={() => handleScroll(refs.projectsRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Projects</Link>
                             {/* <Link to="" onClick={() => handleScroll(refs.pricePlanRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Pricing</Link> */}
                             {/* <Link to="" onClick={() => handleScroll(refs.teamRef)} className={`font-semibold text-sm md:text-base ${hoverTextColor}`}>Team</Link> */}
