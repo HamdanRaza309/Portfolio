@@ -32,7 +32,7 @@ export default function ContactForm(props) {
         e.preventDefault();
 
         emailjs
-            .sendForm('service_oktyl3s', 'template_9dwnuwf', form.current, {
+            .sendForm('service_xfxbbv7', 'template_9dwnuwf', form.current, {
                 publicKey: '8Pl3wB1WmrUUqviR-',
             })
             .then(
