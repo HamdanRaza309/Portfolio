@@ -24,7 +24,7 @@ const BackToTopButton = () => {
     return (
         <button
             onClick={scrollToTop}
-            className="fixed bottom-5 right-5 bg-red-700 text-white w-12 h-12 flex items-center justify-center text-xl shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-red-800 focus:outline-none"
+            className="fixed bottom-2 right-0 bg-red-700 text-white w-12 h-12 flex items-center justify-center text-xl shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-red-800 focus:outline-none"
         >
             <FontAwesomeIcon icon={faAngleUp} />
         </button>

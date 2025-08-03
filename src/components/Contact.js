@@ -19,7 +19,7 @@ export default function ContactForm(props) {
         from_email: '',
         from_org: '',
         from_services: '',
-        ref: '',
+        from_ref: '',
         message: ''
     });
 
@@ -45,7 +45,7 @@ export default function ContactForm(props) {
                         from_services: '',
                         from_ref: '',
                         message: ''
-                    })
+                    });
                 },
                 (error) => {
                     props.showAlert('Email is not Sent', 'danger')
@@ -57,22 +57,22 @@ export default function ContactForm(props) {
         <section
             ref={contactRef}
             id="contact"
-            className={`mb-4 sm:mb-6 md:mb-8 lg:mb-10 flex flex-col-reverse lg:flex-row gap-10 bg-red-600 text-white ${contactAnimationRun ? 'animate-fade-in' : ''}`}
+            className={`mb-6 flex flex-col-reverse lg:flex-row gap-8 bg-red-600 text-white px-4 sm:px-6 md:px-8 py-6 sm:py-8 lg:py-10 ${contactAnimationRun ? 'animate-fade-in' : ''}`}
         >
-            <div className="flex-1 max-w-lg lg:max-w-3xl mx-auto px-5 py-5">
-                <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3">
+            <div className="flex-1 max-w-full lg:max-w-3xl mx-auto">
+                <h2 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 text-center lg:text-left">
                     Let's Talk
                 </h2>
-                <p className="text-sm sm:text-sm md:text-md lg:text-md text-center lg:text-left mb-3 lg:mb-4 text-gray-200">
-                    Have a project in mind or just want to say hello? I’d love to hear from you! Whether you have a question, need some advice, or want to collaborate on an exciting project, feel free to drop me a message. Your ideas and feedback are always welcome, and I'm here to help bring your vision to life.
+                <p className="text-xs sm:text-sm md:text-md text-center lg:text-left mb-4 text-gray-200">
+                    Have a project in mind or just want to say hello? I’d love to hear from you! Whether you have a question, need some advice, or want to collaborate on an exciting project, feel free to drop me a message.
                 </p>
                 <form
                     ref={form}
                     onSubmit={sendEmail}
-                    className="space-y-3 p-2 lg:p-4"
+                    className="space-y-4"
                 >
                     <div className="flex flex-col">
-                        <label htmlFor="name" className="text-lg font-semibold">
+                        <label htmlFor="name" className="text-sm font-semibold">
                             Your Name
                         </label>
                         <input
@@ -81,15 +81,14 @@ export default function ContactForm(props) {
                             id="name"
                             value={formData.from_name}
                             onChange={handleChange}
-                            className="border border-gray-700 bg-gray-800 p-3 focus:outline-none focus:ring-2 focus:ring-white"
+                            className="border border-gray-700 bg-gray-800 p-2 sm:p-3 w-full text-sm focus:outline-none focus:ring-2 focus:ring-white"
                             placeholder="Enter your Name"
                             required
-                            aria-label="Your Name"
                         />
                     </div>
 
                     <div className="flex flex-col">
-                        <label htmlFor="email" className="text-lg font-semibold">
+                        <label htmlFor="email" className="text-sm font-semibold">
                             Email Address
                         </label>
                         <input
@@ -98,14 +97,14 @@ export default function ContactForm(props) {
                             id="email"
                             value={formData.from_email}
                             onChange={handleChange}
-                            className="border border-gray-700 bg-gray-800 p-3 focus:outline-none focus:ring-2 focus:ring-white"
+                            className="border border-gray-700 bg-gray-800 p-2 sm:p-3 w-full text-sm focus:outline-none focus:ring-2 focus:ring-white"
                             placeholder="Enter your Email"
                             required
-                            aria-label="Email Address"
                         />
                     </div>
+
                     <div className="flex flex-col">
-                        <label htmlFor="orgName" className="text-lg font-semibold">
+                        <label htmlFor="orgName" className="text-sm font-semibold">
                             Your Organization
                         </label>
                         <input
@@ -114,13 +113,13 @@ export default function ContactForm(props) {
                             id="orgName"
                             value={formData.from_org}
                             onChange={handleChange}
-                            className="border border-gray-700 bg-gray-800 p-3 focus:outline-none focus:ring-2 focus:ring-white"
+                            className="border border-gray-700 bg-gray-800 p-2 sm:p-3 w-full text-sm focus:outline-none focus:ring-2 focus:ring-white"
                             placeholder="Enter your Organization Name"
-                            aria-label="Your Organization"
                         />
                     </div>
+
                     <div className="flex flex-col">
-                        <label htmlFor="services" className="text-lg font-semibold">
+                        <label htmlFor="services" className="text-sm font-semibold">
                             What services are you looking for?
                         </label>
                         <input
@@ -129,14 +128,14 @@ export default function ContactForm(props) {
                             id="services"
                             value={formData.from_services}
                             onChange={handleChange}
-                            className="border border-gray-700 bg-gray-800 p-3 focus:outline-none focus:ring-2 focus:ring-white"
-                            placeholder="Web Design, Web Development..."
+                            className="border border-gray-700 bg-gray-800 p-2 sm:p-3 w-full text-sm focus:outline-none focus:ring-2 focus:ring-white"
+                            placeholder="Web Design, Development..."
                             required
-                            aria-label="What services are you looking for?"
                         />
                     </div>
+
                     <div className="flex flex-col">
-                        <label htmlFor="ref" className="text-lg font-semibold">
+                        <label htmlFor="ref" className="text-sm font-semibold">
                             How did you hear about us?
                         </label>
                         <select
@@ -144,13 +143,10 @@ export default function ContactForm(props) {
                             id="ref"
                             value={formData.from_ref}
                             onChange={handleChange}
-                            className="border border-gray-700 bg-gray-800 p-3 focus:outline-none focus:ring-2 focus:ring-white"
+                            className="border border-gray-700 bg-gray-800 p-2 sm:p-3 w-full text-sm focus:outline-none focus:ring-2 focus:ring-white"
                             required
-                            aria-label="How did you hear about us?"
                         >
-                            <option value="options">
-                                Options*
-                            </option>
+                            <option value="">Options*</option>
                             <option value="socialMedia">Social Media</option>
                             <option value="friendsOrColleagues">Friends or Colleagues</option>
                             <option value="internetSearch">Internet Search</option>
@@ -160,7 +156,7 @@ export default function ContactForm(props) {
                     </div>
 
                     <div className="flex flex-col">
-                        <label htmlFor="message" className="text-lg font-semibold">
+                        <label htmlFor="message" className="text-sm font-semibold">
                             Project Overview
                         </label>
                         <textarea
@@ -168,22 +164,27 @@ export default function ContactForm(props) {
                             id="message"
                             value={formData.message}
                             onChange={handleChange}
-                            className="border border-gray-700 bg-gray-800 p-3 h-32 focus:outline-none focus:ring-2 focus:ring-white"
+                            className="border border-gray-700 bg-gray-800 p-2 sm:p-3 w-full text-sm h-32 focus:outline-none focus:ring-2 focus:ring-white"
                             placeholder="Hi Hamdan, can you help me with..."
-                            aria-label="Project Overview"
                         ></textarea>
                     </div>
 
                     <button
                         type="submit"
-                        className="btnForRedBg w-full"
+                        className="btnForRedBg w-full text-sm sm:text-base"
                     >
                         Submit
                     </button>
                 </form>
             </div>
-            <div className="flex-1 flex  justify-end lg:justify-end">
-                <img src={Img} alt="Contact" className="w-full h-auto lg:w-full lg:h-auto object-cover" />
+
+            {/* Image hidden on small devices */}
+            <div className="flex-1 hidden sm:flex justify-end">
+                <img
+                    src={Img}
+                    alt="Contact"
+                    className="w-full h-auto object-cover max-w-xs sm:max-w-sm md:max-w-md"
+                />
             </div>
         </section>
     );

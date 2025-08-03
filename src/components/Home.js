@@ -61,7 +61,7 @@ const Home = (props) => {
                     </div>
                 </div>
                 <div className="md:w-1/2 flex justify-center md:justify-end relative animate-zoom-in">
-                    <img src={Hamdan} alt="DP" className="w-64 h-auto sm:w-80 sm:h-auto md:w-auto relative transform scale-x-[-1]" />
+                    <img src={Hamdan} alt="DP" className="hidden sm:block w-64 h-auto sm:w-80 sm:h-auto md:w-auto transform scale-x-[-1]" />
                 </div>
             </div>
         </div>
